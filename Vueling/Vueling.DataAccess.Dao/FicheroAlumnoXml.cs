@@ -64,5 +64,17 @@ namespace Vueling.DataAccess.Dao
             }
             return alumnosFicheroExistente;
         }
+
+        public List<Alumno> CrearListado()
+        {
+            ListadoAlumnosXml listadoAlumnosXml = ListadoAlumnosXml.Instance();
+            return listadoAlumnosXml.ListadoAlumnos;
+        }
+
+        public List<Alumno> GetAll()
+        {
+            List<Alumno> alumnos = DeserializeXml();
+            return alumnos;
+        }
     }
 }

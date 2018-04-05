@@ -53,6 +53,18 @@ namespace Vueling.DataAccess.Dao
                 alumnosFicheroExistente = JsonConvert.DeserializeObject<List<Alumno>>(File.ReadAllText(Ruta));
             }
             return alumnosFicheroExistente;
+        }                
+
+        public List<Alumno> GetAll()
+        {
+            List<Alumno> alumnos = DeserializeJson();
+            return alumnos;
         }
+
+        public List<Alumno> CrearListado()
+        {
+            ListadoAlumnosJson listadoAlumnosJson = ListadoAlumnosJson.Instance();
+            return listadoAlumnosJson.ListadoAlumnos;
+        }        
     }
 }

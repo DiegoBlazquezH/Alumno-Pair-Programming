@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Vueling.Common.Logic.Model;
 using Vueling.DataAccess.Dao;
 using Vueling.DataAccess.Dao.Interfaces;
@@ -31,12 +28,23 @@ namespace Vueling.Business.Logic
         public int CalcularEdad(DateTime fechaCompletaActual, DateTime fechaNacimiento)
         {
             return (Convert.ToInt32((fechaCompletaActual - fechaNacimiento).TotalDays) / 365);
-        }
+        } 
 
         public void SeleccionarTipoFichero(Extension extension)
         {
             FicheroFactory ficheroFactory = new FicheroFactory();
             ficheroAlumno = ficheroFactory.CrearFichero(extension);
+        }
+
+        public List<Alumno> GetAll()
+        {
+            List<Alumno> alumnos = ficheroAlumno.GetAll();
+            return alumnos;
+        }
+        public List<Alumno> CrearListado()
+        {
+            List<Alumno> alumnos = ficheroAlumno.CrearListado();
+            return alumnos;
         }
     }
 }

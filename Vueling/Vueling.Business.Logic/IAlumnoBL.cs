@@ -13,5 +13,7 @@ namespace Vueling.Business.Logic
         Alumno Add(Alumno alumno);
         void SeleccionarTipoFichero(Extension extension);
         int CalcularEdad(DateTime fechaCompletaActual, DateTime fechaNacimiento);
+        List<Alumno> GetAll();
+        List<Alumno> CrearListado();
     }
 }

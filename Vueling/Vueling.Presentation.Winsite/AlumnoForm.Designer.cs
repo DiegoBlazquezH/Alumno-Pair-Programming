@@ -42,6 +42,7 @@
             this.labelNacimiento = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBoxNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.buttonMostrarAlumnos = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -150,6 +151,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.buttonMostrarAlumnos);
             this.panel1.Controls.Add(this.textBoxNacimiento);
             this.panel1.Controls.Add(this.labelNacimiento);
             this.panel1.Controls.Add(this.labelDNI);
@@ -174,6 +176,16 @@
             this.textBoxNacimiento.Name = "textBoxNacimiento";
             this.textBoxNacimiento.Size = new System.Drawing.Size(100, 20);
             this.textBoxNacimiento.TabIndex = 13;
+            // 
+            // buttonMostrarAlumnos
+            // 
+            this.buttonMostrarAlumnos.Location = new System.Drawing.Point(240, 346);
+            this.buttonMostrarAlumnos.Name = "buttonMostrarAlumnos";
+            this.buttonMostrarAlumnos.Size = new System.Drawing.Size(101, 23);
+            this.buttonMostrarAlumnos.TabIndex = 14;
+            this.buttonMostrarAlumnos.Text = "Mostrar alumnos";
+            this.buttonMostrarAlumnos.UseVisualStyleBackColor = true;
+            this.buttonMostrarAlumnos.Click += new System.EventHandler(this.buttonMostrarAlumnos_Click);
             // 
             // AlumnoForm
             // 
@@ -205,5 +217,6 @@
         private System.Windows.Forms.Label labelNacimiento;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DateTimePicker textBoxNacimiento;
+        private System.Windows.Forms.Button buttonMostrarAlumnos;
     }
 }
