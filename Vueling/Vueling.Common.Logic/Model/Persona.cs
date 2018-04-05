@@ -62,21 +62,6 @@ namespace Vueling.Common.Logic.Model
             GUID = Guid.NewGuid();
         }
 
-
-        public override bool Equals(object obj)
-        {
-            var persona = obj as Persona;
-            return persona != null &&
-                   GUID.Equals(persona.GUID) &&
-                   ID == persona.ID &&
-                   Nombre == persona.Nombre &&
-                   Apellidos == persona.Apellidos &&
-                   DNI == persona.DNI &&
-                   FechaNacimiento == persona.FechaNacimiento &&
-                   Edad == persona.Edad &&
-                   FechaCompletaAlta == persona.FechaCompletaAlta;
-        }
-
         public override int GetHashCode()
         {
             var hashCode = 564319517;
@@ -93,15 +78,28 @@ namespace Vueling.Common.Logic.Model
 
         public override string ToString()
         {
-            return string.Format("{0},{1},{2},{3},{4},{5},{6},{7}",
-                                GUID.ToString(),
-                                ID.ToString(),
-                                Nombre,
-                                Apellidos,
-                                DNI,
-                                FechaNacimiento,
-                                Edad.ToString(),
+            return string.Concat(GUID.ToString(), ",",
+                                ID.ToString(), ",",
+                                Nombre, ",",
+                                Apellidos, ",",
+                                DNI, ",",
+                                FechaNacimiento, ",",
+                                Edad.ToString(), ",",
                                 FechaCompletaAlta.ToString());
+        }
+
+        public override bool Equals(object obj)
+        {
+            var persona = obj as Persona;
+            return persona != null &&
+                   GUID.Equals(persona.GUID) &&
+                   ID == persona.ID &&
+                   Nombre == persona.Nombre &&
+                   Apellidos == persona.Apellidos &&
+                   DNI == persona.DNI &&
+                   FechaNacimiento.Date == persona.FechaNacimiento.Date &&
+                   Edad == persona.Edad &&
+                   FechaCompletaAlta.Date == persona.FechaCompletaAlta.Date;
         }
     }
 }

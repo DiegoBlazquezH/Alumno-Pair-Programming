@@ -68,6 +68,10 @@
       <Project>{6874B649-C139-4C85-BD49-91206B596CAA}</Project>
       <Name>Vueling.Business.Logic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Vueling.Common.Logic\Vueling.Common.Logic.csproj">
+      <Project>{CEF12E74-BD80-4087-86BB-2A7DB079B6AD}</Project>
+      <Name>Vueling.Common.Logic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Vueling.DataAccess.Dao\Vueling.DataAccess.Dao.csproj">
       <Project>{96C2D3C4-B865-4BCE-B3A1-61A2B97DBF4B}</Project>
       <Name>Vueling.DataAccess.Dao</Name>
