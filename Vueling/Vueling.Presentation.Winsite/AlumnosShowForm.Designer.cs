@@ -33,14 +33,14 @@
             this.buttonJson = new System.Windows.Forms.Button();
             this.buttonXml = new System.Windows.Forms.Button();
             this.buttonBuscar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.txtGuid = new System.Windows.Forms.TextBox();
+            this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtApellidos = new System.Windows.Forms.TextBox();
+            this.txtDni = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.txtEdad = new System.Windows.Forms.TextBox();
+            this.dtpFechaRegistro = new System.Windows.Forms.DateTimePicker();
             this.labelGuid = new System.Windows.Forms.Label();
             this.labelNombre = new System.Windows.Forms.Label();
             this.labelApellidos = new System.Windows.Forms.Label();
@@ -49,6 +49,8 @@
             this.labelFechaNacimiento = new System.Windows.Forms.Label();
             this.labelEdad = new System.Windows.Forms.Label();
             this.labelFechaRegistro = new System.Windows.Forms.Label();
+            this.chckBxFechaRegistro = new System.Windows.Forms.CheckBox();
+            this.chckBxFechaNacimiento = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,64 +101,67 @@
             this.buttonBuscar.TabIndex = 4;
             this.buttonBuscar.Text = "Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = true;
+            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
-            // textBox1
+            // txtGuid
             // 
-            this.textBox1.Location = new System.Drawing.Point(38, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 5;
+            this.txtGuid.Location = new System.Drawing.Point(38, 30);
+            this.txtGuid.Name = "txtGuid";
+            this.txtGuid.Size = new System.Drawing.Size(100, 20);
+            this.txtGuid.TabIndex = 5;
             // 
-            // dateTimePicker1
+            // dtpFechaNacimiento
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(154, 76);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(100, 20);
-            this.dateTimePicker1.TabIndex = 6;
+            this.dtpFechaNacimiento.Enabled = false;
+            this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(154, 76);
+            this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(100, 20);
+            this.dtpFechaNacimiento.TabIndex = 6;
             // 
-            // textBox2
+            // txtNombre
             // 
-            this.textBox2.Location = new System.Drawing.Point(154, 30);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 7;
+            this.txtNombre.Location = new System.Drawing.Point(154, 30);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.TabIndex = 7;
             // 
-            // textBox3
+            // txtApellidos
             // 
-            this.textBox3.Location = new System.Drawing.Point(272, 30);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 8;
+            this.txtApellidos.Location = new System.Drawing.Point(272, 30);
+            this.txtApellidos.Name = "txtApellidos";
+            this.txtApellidos.Size = new System.Drawing.Size(100, 20);
+            this.txtApellidos.TabIndex = 8;
             // 
-            // textBox4
+            // txtDni
             // 
-            this.textBox4.Location = new System.Drawing.Point(389, 30);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 9;
+            this.txtDni.Location = new System.Drawing.Point(389, 30);
+            this.txtDni.Name = "txtDni";
+            this.txtDni.Size = new System.Drawing.Size(100, 20);
+            this.txtDni.TabIndex = 9;
             // 
-            // textBox5
+            // txtId
             // 
-            this.textBox5.Location = new System.Drawing.Point(38, 76);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 10;
+            this.txtId.Location = new System.Drawing.Point(38, 76);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(100, 20);
+            this.txtId.TabIndex = 10;
             // 
-            // textBox6
+            // txtEdad
             // 
-            this.textBox6.Location = new System.Drawing.Point(272, 76);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 11;
+            this.txtEdad.Location = new System.Drawing.Point(272, 76);
+            this.txtEdad.Name = "txtEdad";
+            this.txtEdad.Size = new System.Drawing.Size(100, 20);
+            this.txtEdad.TabIndex = 11;
             // 
-            // dateTimePicker2
+            // dtpFechaRegistro
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(389, 76);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(100, 20);
-            this.dateTimePicker2.TabIndex = 12;
+            this.dtpFechaRegistro.Enabled = false;
+            this.dtpFechaRegistro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaRegistro.Location = new System.Drawing.Point(389, 76);
+            this.dtpFechaRegistro.Name = "dtpFechaRegistro";
+            this.dtpFechaRegistro.Size = new System.Drawing.Size(100, 20);
+            this.dtpFechaRegistro.TabIndex = 12;
             // 
             // labelGuid
             // 
@@ -188,7 +193,7 @@
             // labelDni
             // 
             this.labelDni.AutoSize = true;
-            this.labelDni.Location = new System.Drawing.Point(422, 8);
+            this.labelDni.Location = new System.Drawing.Point(386, 15);
             this.labelDni.Name = "labelDni";
             this.labelDni.Size = new System.Drawing.Size(26, 13);
             this.labelDni.TabIndex = 16;
@@ -230,11 +235,35 @@
             this.labelFechaRegistro.TabIndex = 20;
             this.labelFechaRegistro.Text = "Fecha de registro";
             // 
+            // chckBxFechaRegistro
+            // 
+            this.chckBxFechaRegistro.AutoSize = true;
+            this.chckBxFechaRegistro.Location = new System.Drawing.Point(425, 102);
+            this.chckBxFechaRegistro.Name = "chckBxFechaRegistro";
+            this.chckBxFechaRegistro.Size = new System.Drawing.Size(64, 17);
+            this.chckBxFechaRegistro.TabIndex = 21;
+            this.chckBxFechaRegistro.Text = "Habilitar";
+            this.chckBxFechaRegistro.UseVisualStyleBackColor = true;
+            this.chckBxFechaRegistro.CheckedChanged += new System.EventHandler(this.chckBxFechaRegistro_CheckedChanged);
+            // 
+            // chckBxFechaNacimiento
+            // 
+            this.chckBxFechaNacimiento.AutoSize = true;
+            this.chckBxFechaNacimiento.Location = new System.Drawing.Point(154, 102);
+            this.chckBxFechaNacimiento.Name = "chckBxFechaNacimiento";
+            this.chckBxFechaNacimiento.Size = new System.Drawing.Size(64, 17);
+            this.chckBxFechaNacimiento.TabIndex = 22;
+            this.chckBxFechaNacimiento.Text = "Habilitar";
+            this.chckBxFechaNacimiento.UseVisualStyleBackColor = true;
+            this.chckBxFechaNacimiento.CheckedChanged += new System.EventHandler(this.chckBxFechaNacimiento_CheckedChanged);
+            // 
             // AlumnosShowForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(543, 389);
+            this.Controls.Add(this.chckBxFechaNacimiento);
+            this.Controls.Add(this.chckBxFechaRegistro);
             this.Controls.Add(this.labelFechaRegistro);
             this.Controls.Add(this.labelEdad);
             this.Controls.Add(this.labelFechaNacimiento);
@@ -243,14 +272,14 @@
             this.Controls.Add(this.labelApellidos);
             this.Controls.Add(this.labelNombre);
             this.Controls.Add(this.labelGuid);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dtpFechaRegistro);
+            this.Controls.Add(this.txtEdad);
+            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.txtDni);
+            this.Controls.Add(this.txtApellidos);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.dtpFechaNacimiento);
+            this.Controls.Add(this.txtGuid);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.buttonXml);
             this.Controls.Add(this.buttonJson);
@@ -272,14 +301,14 @@
         private System.Windows.Forms.Button buttonJson;
         private System.Windows.Forms.Button buttonXml;
         private System.Windows.Forms.Button buttonBuscar;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.TextBox txtGuid;
+        private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtApellidos;
+        private System.Windows.Forms.TextBox txtDni;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.TextBox txtEdad;
+        private System.Windows.Forms.DateTimePicker dtpFechaRegistro;
         private System.Windows.Forms.Label labelGuid;
         private System.Windows.Forms.Label labelNombre;
         private System.Windows.Forms.Label labelApellidos;
@@ -288,5 +317,7 @@
         private System.Windows.Forms.Label labelFechaNacimiento;
         private System.Windows.Forms.Label labelEdad;
         private System.Windows.Forms.Label labelFechaRegistro;
+        private System.Windows.Forms.CheckBox chckBxFechaRegistro;
+        private System.Windows.Forms.CheckBox chckBxFechaNacimiento;
     }
 }
