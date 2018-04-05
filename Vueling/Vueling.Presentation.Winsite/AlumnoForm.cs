@@ -58,5 +58,10 @@ namespace Vueling.Presentation.Winsite
             
         }
 
+        private void buttonMostrarAlumnos_Click(object sender, EventArgs e)
+        {
+            AlumnosShowForm alumnosShowForm = new AlumnosShowForm();
+            alumnosShowForm.ShowDialog();
+        }
     }
 }

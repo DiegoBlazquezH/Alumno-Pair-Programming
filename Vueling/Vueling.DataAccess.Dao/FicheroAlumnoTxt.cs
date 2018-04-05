@@ -58,5 +58,26 @@ namespace Vueling.DataAccess.Dao
                     Convert.ToInt32(paramsAlumno[6]), DateTime.Parse(paramsAlumno[7]));
             return alumno;
         }
+
+        public List<Alumno> GetAll()
+        {
+            List<Alumno> alumnos = new List<Alumno>();
+            string linea;
+            using (StreamReader sr = new StreamReader(Ruta))
+            {
+                while ((linea = sr.ReadLine()) != null)
+                {
+                    Alumno alumno = Deserialize(linea);
+                    alumnos.Add(alumno);
+                }
+            }
+            return alumnos;
+        }
+
+        public List<Alumno> CrearListado()
+        {
+            List<Alumno> alumnos = GetAll();
+            return alumnos;
+        }
     }
 }
