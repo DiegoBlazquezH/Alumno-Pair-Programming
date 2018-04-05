@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vueling.Business.Logic;
+using Vueling.Common.Logic;
 using Vueling.Common.Logic.Model;
 using Vueling.DataAccess.Dao;
 using static Vueling.Common.Logic.Enums.ExtensionesFicheros;
@@ -18,6 +19,7 @@ namespace Vueling.Presentation.Winsite
     {
         private Alumno alumno;
         private IAlumnoBL alumnoBL;
+        ITargetAdapterForLogger logger = new Logger();
 
         public AlumnoForm()
         {
@@ -28,6 +30,7 @@ namespace Vueling.Presentation.Winsite
         
         private void buttonTxt_Click(object sender, EventArgs e)
         {
+            logger.Debug("Probando, añadiendo alumno a TXT"+System.Environment.NewLine);
             LoadAlumnoData();
             alumnoBL.SeleccionarTipoFichero(Extension.TXT);
             alumnoBL.Add(alumno);
@@ -35,6 +38,7 @@ namespace Vueling.Presentation.Winsite
 
         private void buttonJson_Click(object sender, EventArgs e)
         {
+            logger.Debug("Probando, añadiendo alumno a JSON" + System.Environment.NewLine);
             LoadAlumnoData();
             alumnoBL.SeleccionarTipoFichero(Extension.JSON);
             alumnoBL.Add(alumno);

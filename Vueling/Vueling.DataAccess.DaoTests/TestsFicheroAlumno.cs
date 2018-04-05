@@ -25,7 +25,7 @@ namespace Vueling.DataAccess.Dao.Tests
             if (File.Exists(Ruta + "txt")) File.Delete(Ruta + "txt");
             if (File.Exists(Ruta + "json")) File.Delete(Ruta + "json");
             if (File.Exists(Ruta + "xml")) File.Delete(Ruta + "xml");
-        }
+        } 
 
         [TestCleanup]
         public void CleanTest()
