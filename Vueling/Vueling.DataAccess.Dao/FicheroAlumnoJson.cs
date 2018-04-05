@@ -48,10 +48,18 @@ namespace Vueling.DataAccess.Dao
         {
             List<Alumno> alumnosFicheroExistente = new List<Alumno>();
 
-            if (File.Exists(Ruta) && new FileInfo(Ruta).Length != 0)
+            try
             {
-                alumnosFicheroExistente = JsonConvert.DeserializeObject<List<Alumno>>(File.ReadAllText(Ruta));
+                if (File.Exists(Ruta) && new FileInfo(Ruta).Length != 0)
+                {
+                    alumnosFicheroExistente = JsonConvert.DeserializeObject<List<Alumno>>(File.ReadAllText(Ruta));
+                }
             }
+            catch (UnauthorizedAccessException ex)
+            {
+                throw ex;
+            }
+
             return alumnosFicheroExistente;
         }                
 

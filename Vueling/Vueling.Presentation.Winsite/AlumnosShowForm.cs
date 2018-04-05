@@ -1,8 +1,10 @@
-﻿using System;
+﻿using log4net;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Vueling.Business.Logic;
+using Vueling.Common.Logic;
 using Vueling.Common.Logic.Model;
 using static Vueling.Common.Logic.Enums.ExtensionesFicheros;
 
@@ -14,17 +16,14 @@ namespace Vueling.Presentation.Winsite
         private List<Alumno> alumnosJson;
         private List<Alumno> alumnosXml;
         private List<Alumno> alumnos;
+        
 
         public AlumnosShowForm()
         {
             InitializeComponent();
             alumnoBL = new AlumnoBL();
             CrearListados();
-        }
-
-        private void AlumnosShowForm_Load(object sender, EventArgs e)
-        {
-            
+            CargarDatosGrid();
         }
 
         private void CrearListados()
@@ -35,19 +34,31 @@ namespace Vueling.Presentation.Winsite
             alumnosXml = alumnoBL.CrearListado();
         }
 
+        private void CargarDatosGrid()
+        {
+            alumnoBL.SeleccionarTipoFichero(Extension.TXT);
+            List<Alumno> alumns = alumnoBL.GetAll();
+            var source = new BindingSource();
+            source.DataSource = alumns;
+            dataGridAlumnos.DataSource = source;
+            alumnos = alumns;
+        }
+
         private void buttonJson_Click(object sender, EventArgs e)
         {            
             var source = new BindingSource();
             source.DataSource = alumnosJson;
-            dataGridView1.DataSource = source;
+            dataGridAlumnos.DataSource = source;
             alumnos = alumnosJson;
+
+            LogManager.GetLogger("SmtpAppender").Debug("Prueba");
         }
 
         private void buttonXml_Click(object sender, EventArgs e)
         {            
             var source = new BindingSource();
             source.DataSource = alumnosXml;
-            dataGridView1.DataSource = source;
+            dataGridAlumnos.DataSource = source;
             alumnos = alumnosXml;
         }
 
@@ -57,7 +68,7 @@ namespace Vueling.Presentation.Winsite
             List<Alumno> alumns = alumnoBL.GetAll();
             var source = new BindingSource();
             source.DataSource = alumns;
-            dataGridView1.DataSource = source;
+            dataGridAlumnos.DataSource = source;
             alumnos = alumns;
         }
 
@@ -86,7 +97,7 @@ namespace Vueling.Presentation.Winsite
 
             var result = query.ToList();
             source.DataSource = result;
-            dataGridView1.DataSource = source;
+            dataGridAlumnos.DataSource = source;
         }
 
         private void chckBxFechaRegistro_CheckedChanged(object sender, EventArgs e)

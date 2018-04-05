@@ -22,7 +22,7 @@ namespace Vueling.Common.Logic
 
         public void Debug(string message)
         {
-            Log.Debug(message);
+            Log.Debug("#"+message);
         }
 
         public void Debug(string format, params object[] args)
