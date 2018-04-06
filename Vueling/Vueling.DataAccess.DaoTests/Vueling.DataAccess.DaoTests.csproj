@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.1.2.0\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
     </Reference>
@@ -67,6 +70,10 @@
     <ProjectReference Include="..\Vueling.Business.Logic\Vueling.Business.Logic.csproj">
       <Project>{6874B649-C139-4C85-BD49-91206B596CAA}</Project>
       <Name>Vueling.Business.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vueling.Common.Logic\Vueling.Common.Logic.csproj">
+      <Project>{CEF12E74-BD80-4087-86BB-2A7DB079B6AD}</Project>
+      <Name>Vueling.Common.Logic</Name>
     </ProjectReference>
     <ProjectReference Include="..\Vueling.DataAccess.Dao\Vueling.DataAccess.Dao.csproj">
       <Project>{96C2D3C4-B865-4BCE-B3A1-61A2B97DBF4B}</Project>

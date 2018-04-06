@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridAlumnos = new System.Windows.Forms.DataGridView();
             this.buttonTxt = new System.Windows.Forms.Button();
             this.buttonJson = new System.Windows.Forms.Button();
             this.buttonXml = new System.Windows.Forms.Button();
@@ -51,17 +51,17 @@
             this.labelFechaRegistro = new System.Windows.Forms.Label();
             this.chckBxFechaRegistro = new System.Windows.Forms.CheckBox();
             this.chckBxFechaNacimiento = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAlumnos)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridAlumnos
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(38, 143);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(451, 195);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridAlumnos.AllowUserToAddRows = false;
+            this.dataGridAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridAlumnos.Location = new System.Drawing.Point(38, 162);
+            this.dataGridAlumnos.Name = "dataGridAlumnos";
+            this.dataGridAlumnos.Size = new System.Drawing.Size(451, 176);
+            this.dataGridAlumnos.TabIndex = 0;
             // 
             // buttonTxt
             // 
@@ -95,9 +95,9 @@
             // 
             // buttonBuscar
             // 
-            this.buttonBuscar.Location = new System.Drawing.Point(226, 114);
+            this.buttonBuscar.Location = new System.Drawing.Point(195, 125);
             this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(75, 23);
+            this.buttonBuscar.Size = new System.Drawing.Size(123, 23);
             this.buttonBuscar.TabIndex = 4;
             this.buttonBuscar.Text = "Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = true;
@@ -284,11 +284,10 @@
             this.Controls.Add(this.buttonXml);
             this.Controls.Add(this.buttonJson);
             this.Controls.Add(this.buttonTxt);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridAlumnos);
             this.Name = "AlumnosShowForm";
             this.Text = "AlumnosShowForm";
-            this.Load += new System.EventHandler(this.AlumnosShowForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAlumnos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,7 +295,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridAlumnos;
         private System.Windows.Forms.Button buttonTxt;
         private System.Windows.Forms.Button buttonJson;
         private System.Windows.Forms.Button buttonXml;
