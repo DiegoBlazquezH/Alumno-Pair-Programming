@@ -7,11 +7,11 @@ using log4net.Core;
 
 namespace Vueling.Common.Logic
 {
-    public class CustomSmtpAppender : log4net.Appender.BufferingAppenderSkeleton
+    public class CustomSmtpAppender : log4net.Appender.SmtpAppender
     {
-        protected override void SendBuffer(LoggingEvent[] events)
+        protected override void SendEmail(string messageBody)
         {
-            throw new NotImplementedException();
+            base.SendEmail("Prueba:\n"+messageBody);
         }
     }
 }
