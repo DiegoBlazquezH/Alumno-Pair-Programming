@@ -48,7 +48,7 @@
   <ItemGroup>
     <Compile Include="CustomSmtpAppender.cs" />
     <Compile Include="Enums\ExtensionesFicheros.cs" />
-    <Compile Include="ITargetAdapterForLogger.cs" />
+    <Compile Include="ILogger.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Model\Alumno.cs" />
     <Compile Include="Model\Persona.cs" />

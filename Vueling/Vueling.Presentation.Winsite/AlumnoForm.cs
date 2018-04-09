@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,53 +20,109 @@ namespace Vueling.Presentation.Winsite
     {
         private Alumno alumno;
         private IAlumnoBL alumnoBL;
-        ITargetAdapterForLogger logger = new Logger();
+        ILogger logger = new Logger(MethodBase.GetCurrentMethod().DeclaringType);
 
         public AlumnoForm()
         {
-            InitializeComponent();
-            alumno = new Alumno();
-            alumnoBL = new AlumnoBL();
+            try
+            {
+                logger.Debug("Empieza AlumnoForm()");
+                InitializeComponent();
+                alumno = new Alumno();
+                alumnoBL = new AlumnoBL();
+            }
+            catch (Exception ex)
+            {
+                logger.Exception(ex);
+                MessageBox.Show(ex.Message);
+            }
         }
         
         private void buttonTxt_Click(object sender, EventArgs e)
         {
-            logger.Debug("Probando, añadiendo alumno a TXT"+System.Environment.NewLine);
-            LoadAlumnoData();
-            alumnoBL.SeleccionarTipoFichero(Extension.TXT);
-            alumnoBL.Add(alumno);
+            try
+            {
+                logger.Debug("Clickado el botón Txt");
+                LoadAlumnoData();
+                alumnoBL.SeleccionarTipoFichero(Extension.TXT);
+                alumnoBL.Add(alumno);
+                logger.Debug("Termina el botón TXT");
+            }
+            catch (Exception ex)
+            {
+                logger.Exception(ex);
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonJson_Click(object sender, EventArgs e)
         {
-            logger.Debug("Probando, añadiendo alumno a JSON" + System.Environment.NewLine);
-            LoadAlumnoData();
-            alumnoBL.SeleccionarTipoFichero(Extension.JSON);
-            alumnoBL.Add(alumno);
+            try
+            {
+                logger.Debug("Clickado el botón Json");
+                LoadAlumnoData();
+                alumnoBL.SeleccionarTipoFichero(Extension.JSON);
+                alumnoBL.Add(alumno);
+                logger.Debug("Termina el botón Json");
+            }
+            catch (Exception ex)
+            {
+                logger.Exception(ex);
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonXML_Click(object sender, EventArgs e)
         {
-            LoadAlumnoData();
-            alumnoBL.SeleccionarTipoFichero(Extension.XML);
-            alumnoBL.Add(alumno);
+            try
+            {
+                logger.Debug("Clickado el botón Xml");
+                LoadAlumnoData();
+                alumnoBL.SeleccionarTipoFichero(Extension.XML);
+                alumnoBL.Add(alumno);
+                logger.Debug("Termina el botón Xml");
+            }
+            catch (Exception ex)
+            {
+                logger.Exception(ex);
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void LoadAlumnoData()
         {
-            alumno.SetGuid();
-            alumno.ID = Convert.ToInt32(textBoxID.Text);
-            alumno.Nombre = textBoxNombre.Text;
-            alumno.Apellidos = textBoxApellidos.Text;
-            alumno.DNI = textBoxDNI.Text;
-            alumno.FechaNacimiento = textBoxNacimiento.Value.Date;
+            try
+            {
+                logger.Debug("Empieza LoadAlumnoData()");
+                alumno.SetGuid();
+                alumno.ID = Convert.ToInt32(textBoxID.Text);
+                alumno.Nombre = textBoxNombre.Text;
+                alumno.Apellidos = textBoxApellidos.Text;
+                alumno.DNI = textBoxDNI.Text;
+                alumno.FechaNacimiento = textBoxNacimiento.Value.Date;
+                logger.Debug("Termina LoadAlumnoData()");
+            }
+            catch (Exception ex)
+            {
+                logger.Exception(ex);
+                throw;
+            }
             
         }
 
         private void buttonMostrarAlumnos_Click(object sender, EventArgs e)
         {
-            AlumnosShowForm alumnosShowForm = new AlumnosShowForm();
-            alumnosShowForm.ShowDialog();
+            try
+            {
+                logger.Debug("Muestra AlumnosShow");
+                AlumnosShowForm alumnosShowForm = new AlumnosShowForm();
+                alumnosShowForm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                logger.Exception(ex);
+                throw;
+            }
         }
     }
 }
