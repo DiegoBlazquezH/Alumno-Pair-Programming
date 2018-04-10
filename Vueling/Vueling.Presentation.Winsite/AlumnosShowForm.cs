@@ -138,8 +138,10 @@ namespace Vueling.Presentation.Winsite
                 string apellidos = txtApellidos.Text;
                 string dni = txtDni.Text;
                 string id = txtId.Text;
+                int idInt;
                 DateTime dtFechaNacimiento = dtpFechaNacimiento.Value;
                 string edad = txtEdad.Text;
+                int edadInt;
                 DateTime dtFechaRegistro = dtpFechaRegistro.Value;
 
                 var source = new BindingSource();
@@ -153,11 +155,17 @@ namespace Vueling.Presentation.Winsite
                 if (!String.IsNullOrEmpty(dni))
                     query = query.Where(alu => alu.DNI.Equals(dni));
                 if (!String.IsNullOrEmpty(id))
-                    query = query.Where(alu => alu.ID.Equals(Convert.ToInt32(id)));
+                {
+                    idInt = Convert.ToInt32(id);
+                    query = query.Where(alu => alu.ID.Equals(idInt));
+                }
                 if (chckBxFechaNacimiento.Checked)
                     query = query.Where(alu => alu.FechaNacimiento.Date.Equals(dtFechaNacimiento.Date));
                 if (!String.IsNullOrEmpty(edad))
-                    query = query.Where(alu => alu.Edad.Equals(Convert.ToInt32(edad)));
+                {
+                    edadInt = Convert.ToInt32(edad);
+                    query = query.Where(alu => alu.Edad.Equals(edadInt));
+                }
                 if (chckBxFechaRegistro.Checked)
                     query = query.Where(alu => alu.FechaCompletaAlta.Date.Equals(dtFechaRegistro.Date));
 
