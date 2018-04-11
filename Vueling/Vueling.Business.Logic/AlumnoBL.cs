@@ -94,12 +94,12 @@ namespace Vueling.Business.Logic
                 throw;
             }
         }
-        public List<Alumno> CrearListado()
+        public List<Alumno> GetSingletonInstance()
         {
             try
             {
-                logger.Debug("Empieza SeleccionarTipoFichero()");
-                List<Alumno> alumnos = ficheroAlumno.CrearListado();
+                logger.Debug("Empieza GetSingletonInstance()");
+                List<Alumno> alumnos = ficheroAlumno.GetSingletonInstance();
                 logger.Debug("Termina CrearListado()");
                 return alumnos;
             }
@@ -115,7 +115,7 @@ namespace Vueling.Business.Logic
         {
             try
             {
-                List<Alumno> alumnos = GetAll();
+                List<Alumno> alumnos = GetSingletonInstance();
                 logger.Debug("Empieza Filter()");
                 int idInt, edadInt;
                 var query = from alu in alumnos select alu;

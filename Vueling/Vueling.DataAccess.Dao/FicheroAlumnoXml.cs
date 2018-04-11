@@ -128,7 +128,7 @@ namespace Vueling.DataAccess.Dao
             }
         }
 
-        public List<Alumno> CrearListado()
+        public List<Alumno> GetSingletonInstance()
         {
             try
             {
