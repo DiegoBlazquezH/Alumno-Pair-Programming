@@ -1,7 +1,5 @@
-﻿using log4net;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 using Vueling.Business.Logic;
@@ -13,13 +11,10 @@ namespace Vueling.Presentation.Winsite
 {
     public partial class AlumnosShowForm : Form
     {
-        private IAlumnoBL alumnoBL;
-        private List<Alumno> alumnosJson;
-        private List<Alumno> alumnosXml;
+        private IAlumnoBL alumnoBL;        
         private List<Alumno> alumnos;
 
         ILogger logger = new Logger(MethodBase.GetCurrentMethod().DeclaringType);
-
 
         public AlumnosShowForm()
         {
@@ -27,8 +22,7 @@ namespace Vueling.Presentation.Winsite
             {
                 logger.Debug("Empieza AlumnoShowForm()");
                 InitializeComponent();
-                alumnoBL = new AlumnoBL();
-                CrearListados();
+                alumnoBL = new AlumnoBL();                
                 CargarDatosGrid();
             }
             catch (Exception ex)
@@ -37,25 +31,7 @@ namespace Vueling.Presentation.Winsite
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void CrearListados()
-        {
-            try
-            {
-                logger.Debug("Empieza CrearListados()");
-                alumnoBL.SeleccionarTipoFichero(Extension.JSON);
-                alumnosJson = alumnoBL.CrearListado();
-                alumnoBL.SeleccionarTipoFichero(Extension.XML);
-                alumnosXml = alumnoBL.CrearListado();
-                logger.Debug("Termina CrearListados()");
-            }
-            catch (Exception ex)
-            {
-                logger.Exception(ex);
-                throw;
-            }
-        }
-
+                
         private void CargarDatosGrid()
         {
             try
@@ -77,11 +53,10 @@ namespace Vueling.Presentation.Winsite
             {
                 logger.Debug("Empieza buttonJson_Click()");
                 alumnoBL.SeleccionarTipoFichero(Extension.JSON);
-                List<Alumno> alumns = alumnoBL.GetAll();
+                alumnos = alumnoBL.GetSingletonInstance();
                 var source = new BindingSource();
-                source.DataSource = alumns;
-                dataGridAlumnos.DataSource = source;
-                alumnosJson = alumns;
+                source.DataSource = alumnos;
+                dataGridAlumnos.DataSource = source;                
                 logger.Debug("Termina buttonJson_Click()");
             }
             catch (Exception ex)
@@ -98,11 +73,10 @@ namespace Vueling.Presentation.Winsite
             {
                 logger.Debug("Empieza buttonXml_Click()");
                 alumnoBL.SeleccionarTipoFichero(Extension.XML);
-                List<Alumno> alumns = alumnoBL.GetAll();
+                alumnos = alumnoBL.GetSingletonInstance();
                 var source = new BindingSource();
-                source.DataSource = alumns;
-                dataGridAlumnos.DataSource = source;
-                alumnosXml = alumns;
+                source.DataSource = alumnos;
+                dataGridAlumnos.DataSource = source;                
                 logger.Debug("Termina buttonXml_Click()");
             }
             catch (Exception ex)
@@ -118,11 +92,10 @@ namespace Vueling.Presentation.Winsite
             {
                 logger.Debug("Empieza buttonTxt_Click()");
                 alumnoBL.SeleccionarTipoFichero(Extension.TXT);
-                List<Alumno> alumns = alumnoBL.GetAll();
+                alumnos = alumnoBL.GetAll();
                 var source = new BindingSource();
-                source.DataSource = alumns;
-                dataGridAlumnos.DataSource = source;
-                alumnos = alumns;
+                source.DataSource = alumnos;
+                dataGridAlumnos.DataSource = source;                
                 logger.Debug("Termina buttonTxt_Click()");
             }
             catch (Exception ex)

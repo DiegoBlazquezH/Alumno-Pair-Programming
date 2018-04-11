@@ -11,6 +11,6 @@ namespace Vueling.DataAccess.Dao.Interfaces
         Alumno Add(Alumno alumno);
         Alumno Select(Guid guid);
         List<Alumno> GetAll();
-        List<Alumno> CrearListado();        
+        List<Alumno> GetSingletonInstance();        
     }
 }
