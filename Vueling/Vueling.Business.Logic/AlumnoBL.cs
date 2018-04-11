@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Linq;
 using System.Reflection;
 using Vueling.Common.Logic;
 using Vueling.Common.Logic.Model;
@@ -101,6 +102,51 @@ namespace Vueling.Business.Logic
                 List<Alumno> alumnos = ficheroAlumno.CrearListado();
                 logger.Debug("Termina CrearListado()");
                 return alumnos;
+            }
+            catch (Exception ex)
+            {
+                logger.Exception(ex);
+                throw;
+            }
+        }
+
+      
+        public List<Alumno> Filter(string guid, string nombre, string apellidos, string dni, string id, DateTime dtFechaNacimiento,bool fechaNacimientoChecked, string edad, DateTime dtFechaRegistro, bool fechaRegistroChecked)
+        {
+            try
+            {
+                List<Alumno> alumnos = GetAll();
+                logger.Debug("Empieza Filter()");
+                int idInt, edadInt;
+                var query = from alu in alumnos select alu;
+                if (!String.IsNullOrEmpty(guid))
+                    query = query.Where(alu => alu.GUID.Equals(Guid.Parse(guid)));
+                if (!String.IsNullOrEmpty(nombre))
+                    query = query.Where(alu => alu.Nombre.Equals(nombre));
+                if (!String.IsNullOrEmpty(apellidos))
+                    query = query.Where(alu => alu.Apellidos.Equals(apellidos));
+                if (!String.IsNullOrEmpty(dni))
+                    query = query.Where(alu => alu.DNI.Equals(dni));
+                if (!String.IsNullOrEmpty(id))
+                {
+                    idInt = Convert.ToInt32(id);
+                    query = query.Where(alu => alu.ID.Equals(idInt));
+                }
+                if (fechaNacimientoChecked)
+                    query = query.Where(alu => alu.FechaNacimiento.Date.Equals(dtFechaNacimiento.Date));
+                if (!String.IsNullOrEmpty(edad))
+                {
+                    edadInt = Convert.ToInt32(edad);
+                    query = query.Where(alu => alu.Edad.Equals(edadInt));
+                }
+                if (fechaRegistroChecked)
+                    query = query.Where(alu => alu.FechaCompletaAlta.Date.Equals(dtFechaRegistro.Date));
+
+                query = query.OrderBy(alu => alu.ID);
+
+                var result = query.ToList();
+                logger.Debug("Termina Filter()");
+                return result;
             }
             catch (Exception ex)
             {

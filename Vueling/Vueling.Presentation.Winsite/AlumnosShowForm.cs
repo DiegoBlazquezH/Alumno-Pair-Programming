@@ -76,10 +76,12 @@ namespace Vueling.Presentation.Winsite
             try
             {
                 logger.Debug("Empieza buttonJson_Click()");
+                alumnoBL.SeleccionarTipoFichero(Extension.JSON);
+                List<Alumno> alumns = alumnoBL.GetAll();
                 var source = new BindingSource();
-                source.DataSource = alumnosJson;
+                source.DataSource = alumns;
                 dataGridAlumnos.DataSource = source;
-                alumnos = alumnosJson;
+                alumnosJson = alumns;
                 logger.Debug("Termina buttonJson_Click()");
             }
             catch (Exception ex)
@@ -95,10 +97,12 @@ namespace Vueling.Presentation.Winsite
             try
             {
                 logger.Debug("Empieza buttonXml_Click()");
+                alumnoBL.SeleccionarTipoFichero(Extension.XML);
+                List<Alumno> alumns = alumnoBL.GetAll();
                 var source = new BindingSource();
-                source.DataSource = alumnosXml;
+                source.DataSource = alumns;
                 dataGridAlumnos.DataSource = source;
-                alumnos = alumnosXml;
+                alumnosXml = alumns;
                 logger.Debug("Termina buttonXml_Click()");
             }
             catch (Exception ex)
@@ -137,41 +141,14 @@ namespace Vueling.Presentation.Winsite
                 string nombre = txtNombre.Text;
                 string apellidos = txtApellidos.Text;
                 string dni = txtDni.Text;
-                string id = txtId.Text;
-                int idInt;
+                string id = txtId.Text;                
                 DateTime dtFechaNacimiento = dtpFechaNacimiento.Value;
-                string edad = txtEdad.Text;
-                int edadInt;
+                string edad = txtEdad.Text;                
                 DateTime dtFechaRegistro = dtpFechaRegistro.Value;
 
-                var source = new BindingSource();
-                var query = from alu in alumnos select alu;
-                if (!String.IsNullOrEmpty(guid))
-                    query = query.Where(alu => alu.GUID.Equals(Guid.Parse(guid)));
-                if (!String.IsNullOrEmpty(nombre))
-                    query = query.Where(alu => alu.Nombre.Equals(nombre));
-                if (!String.IsNullOrEmpty(apellidos))
-                    query = query.Where(alu => alu.Apellidos.Equals(apellidos));
-                if (!String.IsNullOrEmpty(dni))
-                    query = query.Where(alu => alu.DNI.Equals(dni));
-                if (!String.IsNullOrEmpty(id))
-                {
-                    idInt = Convert.ToInt32(id);
-                    query = query.Where(alu => alu.ID.Equals(idInt));
-                }
-                if (chckBxFechaNacimiento.Checked)
-                    query = query.Where(alu => alu.FechaNacimiento.Date.Equals(dtFechaNacimiento.Date));
-                if (!String.IsNullOrEmpty(edad))
-                {
-                    edadInt = Convert.ToInt32(edad);
-                    query = query.Where(alu => alu.Edad.Equals(edadInt));
-                }
-                if (chckBxFechaRegistro.Checked)
-                    query = query.Where(alu => alu.FechaCompletaAlta.Date.Equals(dtFechaRegistro.Date));
+                List<Alumno> result = alumnoBL.Filter(guid,nombre,apellidos,dni,id,dtFechaNacimiento,chckBxFechaNacimiento.Checked,edad,dtFechaRegistro, chckBxFechaRegistro.Checked);
 
-                query = query.OrderBy(alu => alu.ID);
-
-                var result = query.ToList();
+                var source = new BindingSource();                
                 source.DataSource = result;
                 dataGridAlumnos.DataSource = source;
                 logger.Debug("Termina buttonBuscar_Click()");
