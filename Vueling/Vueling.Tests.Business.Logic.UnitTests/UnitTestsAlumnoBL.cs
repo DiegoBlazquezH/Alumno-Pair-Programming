@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NMock;
+using Vueling.Business.Logic;
 using Vueling.Common.Logic.Model;
 
-namespace Vueling.Tests.Business.LogicUnitTests
+namespace Vueling.Tests.Business.Logic.UnitTests
 {
     [TestClass]
     public class UnitTestsAlumnoBL
@@ -31,7 +32,7 @@ namespace Vueling.Tests.Business.LogicUnitTests
 
         public static IEnumerable<object[]> DatosAlumno()
         {
-            yield return new object[] { "", "1", "", "", "", null,  false, "", DateTime.Now, false };
+            yield return new object[] { "", "1", "", "", "", null, false, "", DateTime.Now, false };
         }
 
         [DataTestMethod]

@@ -1,17 +1,13 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Vueling.DataAccess.Dao;
+﻿using Vueling.DataAccess.Dao.Interfaces;
+using System.IO;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Vueling.Business.Logic;
-using Vueling.DataAccess.Dao.Interfaces;
+using Vueling.DataAccess.Dao;
 using Vueling.Common.Logic.Model;
-using System.IO;
 using static Vueling.Common.Logic.Enums.ExtensionesFicheros;
 
-namespace Vueling.Tests.DataAccess.DaoIntegrationTests
+namespace Vueling.Tests.DataAccess.Dao.IntegrationTests
 {
     [TestClass()]
     public class IntegrationTestsFicheroAlumno
@@ -25,7 +21,7 @@ namespace Vueling.Tests.DataAccess.DaoIntegrationTests
             if (File.Exists(Ruta + "txt")) File.Delete(Ruta + "txt");
             if (File.Exists(Ruta + "json")) File.Delete(Ruta + "json");
             if (File.Exists(Ruta + "xml")) File.Delete(Ruta + "xml");
-        } 
+        }
 
         [TestCleanup]
         public void CleanTest()
@@ -68,7 +64,5 @@ namespace Vueling.Tests.DataAccess.DaoIntegrationTests
             Alumno alumnoAñadido = ficheroAlumnoXml.Add(alumno);
             Assert.IsTrue(alumno.Equals(alumnoAñadido));
         }
-
-
     }
 }

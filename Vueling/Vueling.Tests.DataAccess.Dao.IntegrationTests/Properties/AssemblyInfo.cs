@@ -2,18 +2,18 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("Vueling.Tests.Business.LogicUnitTests")]
+[assembly: AssemblyTitle("Vueling.Tests.DataAccess.Dao.IntegrationTests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Vueling.Tests.Business.LogicUnitTests")]
+[assembly: AssemblyProduct("Vueling.Tests.DataAccess.Dao.IntegrationTests")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 [assembly: ComVisible(false)]
 
-[assembly: Guid("5a5fa4c8-bf6d-4dd9-862f-781afb97f40a")]
+[assembly: Guid("f3844628-2f92-4b53-87c8-b9c642165499")]
 
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
