@@ -68,8 +68,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AlumnoForm.ca-ES.resx">
+      <DependentUpon>AlumnoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlumnoForm.en-GB.resx">
+      <DependentUpon>AlumnoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlumnoForm.es-ES.resx">
+      <DependentUpon>AlumnoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AlumnoForm.resx">
       <DependentUpon>AlumnoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlumnosShowForm.ca-ES.resx">
+      <DependentUpon>AlumnosShowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlumnosShowForm.en-GB.resx">
+      <DependentUpon>AlumnosShowForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AlumnosShowForm.resx">
       <DependentUpon>AlumnosShowForm.cs</DependentUpon>
@@ -82,6 +97,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

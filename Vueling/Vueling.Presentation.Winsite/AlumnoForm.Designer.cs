@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlumnoForm));
             this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.textBoxDNI = new System.Windows.Forms.TextBox();
             this.textBoxApellidos = new System.Windows.Forms.TextBox();
@@ -41,6 +42,7 @@
             this.labelDNI = new System.Windows.Forms.Label();
             this.labelNacimiento = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.buttonMostrarAlumnos = new System.Windows.Forms.Button();
             this.textBoxNacimiento = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
@@ -48,109 +50,74 @@
             // 
             // textBoxNombre
             // 
-            this.textBoxNombre.Location = new System.Drawing.Point(288, 95);
+            resources.ApplyResources(this.textBoxNombre, "textBoxNombre");
             this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNombre.TabIndex = 1;
             // 
             // textBoxDNI
             // 
-            this.textBoxDNI.Location = new System.Drawing.Point(288, 196);
+            resources.ApplyResources(this.textBoxDNI, "textBoxDNI");
             this.textBoxDNI.Name = "textBoxDNI";
-            this.textBoxDNI.Size = new System.Drawing.Size(100, 20);
-            this.textBoxDNI.TabIndex = 3;
             // 
             // textBoxApellidos
             // 
-            this.textBoxApellidos.Location = new System.Drawing.Point(288, 148);
+            resources.ApplyResources(this.textBoxApellidos, "textBoxApellidos");
             this.textBoxApellidos.Name = "textBoxApellidos";
-            this.textBoxApellidos.Size = new System.Drawing.Size(100, 20);
-            this.textBoxApellidos.TabIndex = 2;
             // 
             // textBoxID
             // 
-            this.textBoxID.Location = new System.Drawing.Point(288, 41);
+            resources.ApplyResources(this.textBoxID, "textBoxID");
             this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(100, 20);
-            this.textBoxID.TabIndex = 0;
             // 
             // buttonText
             // 
-            this.buttonText.Location = new System.Drawing.Point(70, 301);
+            resources.ApplyResources(this.buttonText, "buttonText");
             this.buttonText.Name = "buttonText";
-            this.buttonText.Size = new System.Drawing.Size(75, 23);
-            this.buttonText.TabIndex = 5;
-            this.buttonText.Text = "Txt";
             this.buttonText.UseVisualStyleBackColor = true;
             this.buttonText.Click += new System.EventHandler(this.buttonTxt_Click);
             // 
             // buttonJson
             // 
-            this.buttonJson.Location = new System.Drawing.Point(254, 301);
+            resources.ApplyResources(this.buttonJson, "buttonJson");
             this.buttonJson.Name = "buttonJson";
-            this.buttonJson.Size = new System.Drawing.Size(75, 23);
-            this.buttonJson.TabIndex = 6;
-            this.buttonJson.Text = "Json";
             this.buttonJson.UseVisualStyleBackColor = true;
             this.buttonJson.Click += new System.EventHandler(this.buttonJson_Click);
             // 
             // buttonXML
             // 
-            this.buttonXML.Location = new System.Drawing.Point(429, 301);
+            resources.ApplyResources(this.buttonXML, "buttonXML");
             this.buttonXML.Name = "buttonXML";
-            this.buttonXML.Size = new System.Drawing.Size(75, 23);
-            this.buttonXML.TabIndex = 7;
-            this.buttonXML.Text = "XML";
             this.buttonXML.UseVisualStyleBackColor = true;
             this.buttonXML.Click += new System.EventHandler(this.buttonXML_Click);
             // 
             // labelID
             // 
-            this.labelID.AutoSize = true;
-            this.labelID.Location = new System.Drawing.Point(85, 48);
+            resources.ApplyResources(this.labelID, "labelID");
             this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(18, 13);
-            this.labelID.TabIndex = 8;
-            this.labelID.Text = "ID";
             // 
             // labelNombre
             // 
-            this.labelNombre.AutoSize = true;
-            this.labelNombre.Location = new System.Drawing.Point(85, 95);
+            resources.ApplyResources(this.labelNombre, "labelNombre");
             this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(44, 13);
-            this.labelNombre.TabIndex = 9;
-            this.labelNombre.Text = "Nombre";
             // 
             // labelApellidos
             // 
-            this.labelApellidos.AutoSize = true;
-            this.labelApellidos.Location = new System.Drawing.Point(85, 148);
+            resources.ApplyResources(this.labelApellidos, "labelApellidos");
             this.labelApellidos.Name = "labelApellidos";
-            this.labelApellidos.Size = new System.Drawing.Size(49, 13);
-            this.labelApellidos.TabIndex = 10;
-            this.labelApellidos.Text = "Apellidos";
             // 
             // labelDNI
             // 
-            this.labelDNI.AutoSize = true;
-            this.labelDNI.Location = new System.Drawing.Point(85, 196);
+            resources.ApplyResources(this.labelDNI, "labelDNI");
             this.labelDNI.Name = "labelDNI";
-            this.labelDNI.Size = new System.Drawing.Size(26, 13);
-            this.labelDNI.TabIndex = 11;
-            this.labelDNI.Text = "DNI";
             // 
             // labelNacimiento
             // 
-            this.labelNacimiento.AutoSize = true;
-            this.labelNacimiento.Location = new System.Drawing.Point(85, 244);
+            resources.ApplyResources(this.labelNacimiento, "labelNacimiento");
             this.labelNacimiento.Name = "labelNacimiento";
-            this.labelNacimiento.Size = new System.Drawing.Size(106, 13);
-            this.labelNacimiento.TabIndex = 12;
-            this.labelNacimiento.Text = "Fecha de nacimiento";
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.buttonMostrarAlumnos);
             this.panel1.Controls.Add(this.textBoxNacimiento);
             this.panel1.Controls.Add(this.labelNacimiento);
@@ -165,36 +132,38 @@
             this.panel1.Controls.Add(this.textBoxApellidos);
             this.panel1.Controls.Add(this.textBoxDNI);
             this.panel1.Controls.Add(this.textBoxNombre);
-            this.panel1.Location = new System.Drawing.Point(36, 29);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(556, 389);
-            this.panel1.TabIndex = 13;
+            // 
+            // comboBox1
+            // 
+            resources.ApplyResources(this.comboBox1, "comboBox1");
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            resources.GetString("comboBox1.Items"),
+            resources.GetString("comboBox1.Items1"),
+            resources.GetString("comboBox1.Items2")});
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // buttonMostrarAlumnos
             // 
-            this.buttonMostrarAlumnos.Location = new System.Drawing.Point(240, 346);
+            resources.ApplyResources(this.buttonMostrarAlumnos, "buttonMostrarAlumnos");
             this.buttonMostrarAlumnos.Name = "buttonMostrarAlumnos";
-            this.buttonMostrarAlumnos.Size = new System.Drawing.Size(101, 23);
-            this.buttonMostrarAlumnos.TabIndex = 14;
-            this.buttonMostrarAlumnos.Text = "Mostrar alumnos";
             this.buttonMostrarAlumnos.UseVisualStyleBackColor = true;
             this.buttonMostrarAlumnos.Click += new System.EventHandler(this.buttonMostrarAlumnos_Click);
             // 
             // textBoxNacimiento
             // 
-            this.textBoxNacimiento.Location = new System.Drawing.Point(288, 244);
+            resources.ApplyResources(this.textBoxNacimiento, "textBoxNacimiento");
             this.textBoxNacimiento.Name = "textBoxNacimiento";
-            this.textBoxNacimiento.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNacimiento.TabIndex = 13;
             // 
             // AlumnoForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(649, 450);
             this.Controls.Add(this.panel1);
             this.Name = "AlumnoForm";
-            this.Text = "AlumnoForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -218,5 +187,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DateTimePicker textBoxNacimiento;
         private System.Windows.Forms.Button buttonMostrarAlumnos;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
