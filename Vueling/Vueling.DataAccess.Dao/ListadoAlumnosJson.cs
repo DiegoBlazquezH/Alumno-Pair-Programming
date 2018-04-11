@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using Vueling.DataAccess.Dao;
 using Vueling.DataAccess.Dao.Interfaces;
+using System;
+using System.Reflection;
 
 namespace Vueling.Common.Logic.Model
 {
@@ -13,6 +15,8 @@ namespace Vueling.Common.Logic.Model
 
         protected ListadoAlumnosJson()
         {
+            ILogger logger = new Logger(MethodBase.GetCurrentMethod().DeclaringType);
+            logger.Debug("Instanciando ListadoAlumnosJson Singleton");
         }
 
         public static ListadoAlumnosJson Instance()
@@ -21,14 +25,25 @@ namespace Vueling.Common.Logic.Model
 
             // Note: this is not thread safe.
 
-            if (_instance == null)
-            {
-                _instance = new ListadoAlumnosJson();
-                IFicheroAlumno ficheroAlumno = new FicheroAlumnoJson();
-                _instance.ListadoAlumnos = ficheroAlumno.GetAll();
-            }
+            ILogger logger = new Logger(MethodBase.GetCurrentMethod().DeclaringType);
 
-            return _instance;
+            try
+            {
+                logger.Debug("Empieza Instance()");
+                if (_instance == null)
+                {
+                    _instance = new ListadoAlumnosJson();
+                    IFicheroAlumno ficheroAlumno = new FicheroAlumnoJson();
+                    _instance.ListadoAlumnos = ficheroAlumno.GetAll();
+                }
+                logger.Debug("Termina Instance()");
+                return _instance;
+            }
+            catch (Exception ex)
+            {
+                logger.Exception(ex);
+                throw;
+            }
         }
         
     }

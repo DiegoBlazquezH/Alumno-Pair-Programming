@@ -11,7 +11,7 @@ namespace Vueling.Common.Logic
     {
         protected override void SendEmail(string messageBody)
         {
-            base.SendEmail("Prueba:\n"+messageBody);
+            base.SendEmail(messageBody);
         }
     }
 }

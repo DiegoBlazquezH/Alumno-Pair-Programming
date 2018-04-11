@@ -34,6 +34,9 @@
   <PropertyGroup>
     <StartupObject>Vueling.Presentation.Winsite.Program</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon-alumnos2.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
@@ -107,6 +110,9 @@
       <Project>{96C2D3C4-B865-4BCE-B3A1-61A2B97DBF4B}</Project>
       <Name>Vueling.DataAccess.Dao</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon-alumnos2.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

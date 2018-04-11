@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vueling.Common.Logic
 {
-    public interface ITargetAdapterForLogger
+    public interface ILogger
     {
         TimeSpan ExecutionTime { get; set; }
         int counter { get; set; }
@@ -22,6 +22,7 @@ namespace Vueling.Common.Logic
         void Fatal(string message);
         void Fatal(string format, params object[] args);
         void Exception(Exception exception, string message);
+        void Exception(Exception exception);
         void Exception(Exception exception, string format, params object[] args);
         void EmailException(string msg);
     }
