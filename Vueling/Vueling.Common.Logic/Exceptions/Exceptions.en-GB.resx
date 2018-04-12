@@ -118,36 +118,36 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ArgumentException" xml:space="preserve">
-    <value>Uno de los argumentos proporcionados no es válido.</value>
+    <value>One of the given arguments is not valid.</value>
   </data>
   <data name="ArgumentNullException" xml:space="preserve">
-    <value>Argumento null no válido para uno de los métodos.</value>
+    <value>Null argument not valid for one of the methods.</value>
   </data>
   <data name="ArgumentOutOfRangeException" xml:space="preserve">
-    <value>Valor de un argumento fuera del intervalo permitido.</value>
+    <value>Argument value out of the allowed range.</value>
   </data>
   <data name="DirectoryNotFoundException" xml:space="preserve">
-    <value>Directorio no encontrado.</value>
+    <value>Directory not found.</value>
   </data>
   <data name="FileNotFoundException" xml:space="preserve">
-    <value>Archivo no encontrado.</value>
+    <value>File not found.</value>
   </data>
   <data name="FormatException" xml:space="preserve">
-    <value>Formato no válido o incorrecto.</value>
+    <value>Invalid format.</value>
   </data>
   <data name="IOException" xml:space="preserve">
-    <value>Error de E/S.</value>
+    <value>I/O error.</value>
   </data>
   <data name="OutOfMemoryException" xml:space="preserve">
-    <value>Memoria insuficiente para continuar con la ejecución.</value>
+    <value>Insufficient memory to continue with the execution.</value>
   </data>
   <data name="OverflowException" xml:space="preserve">
-    <value>Desbordamiento  por conversión incorrecta.</value>
+    <value>Overflow due to incorrect conversion.</value>
   </data>
   <data name="PlatformNotSupportedException" xml:space="preserve">
-    <value>Una característica no se ha ejecutado en una plataforma concreta.</value>
+    <value>A feature has not been executed on a specific platform.</value>
   </data>
   <data name="TargetException" xml:space="preserve">
-    <value>Se ha intentado invocar un destino incorrecto.</value>
+    <value>An attempt was made to invoke an incorrect destination.</value>
   </data>
 </root>
