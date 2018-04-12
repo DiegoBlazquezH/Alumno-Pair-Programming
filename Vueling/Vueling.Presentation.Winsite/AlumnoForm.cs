@@ -6,10 +6,10 @@ using System.Reflection;
 using System.Windows.Forms;
 using Vueling.Business.Logic;
 using Vueling.Common.Logic;
+using Vueling.Common.Logic.Enums;
 using Vueling.Common.Logic.Helpers;
 using Vueling.Common.Logic.Model;
 using static Vueling.Common.Logic.Enums.ExtensionesFicheros;
-using static Vueling.Common.Logic.Enums.IdiomasAplicacion;
 
 namespace Vueling.Presentation.Winsite
 {
@@ -148,7 +148,8 @@ namespace Vueling.Presentation.Winsite
             GetChildren(this).ToList().ForEach(c =>
             {
                 resources.ApplyResources(c, c.Name);
-            });
+            });            
+            this.Text = resources.GetString("$this.Text");
         }
         public IEnumerable<Control> GetChildren(Control control)
         {

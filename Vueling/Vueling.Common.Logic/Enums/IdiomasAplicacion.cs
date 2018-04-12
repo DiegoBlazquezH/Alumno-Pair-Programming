@@ -1,12 +1,9 @@
 ﻿namespace Vueling.Common.Logic.Enums
 {
-    public static class IdiomasAplicacion
+    public enum Idioma
     {
-        public enum Idioma
-        {
-            Catalan = 0,
-            English,
-            Spanish            
-        }
+        Catalan = 0,
+        English = 1,
+        Spanish = 2
     }
 }
