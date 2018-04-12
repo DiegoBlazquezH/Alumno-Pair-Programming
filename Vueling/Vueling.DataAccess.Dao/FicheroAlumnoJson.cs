@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Vueling.Common.Logic;
 using Vueling.Common.Logic.Model;
+using Vueling.Common.Logic.Properties;
 using Vueling.DataAccess.Dao.Interfaces;
 
 namespace Vueling.DataAccess.Dao
@@ -21,9 +22,9 @@ namespace Vueling.DataAccess.Dao
         {
             try
             {
-                logger.Debug("Empieza FicheroAlumnoJson()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 Ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + "ListadoAlumnos.json";
-                logger.Debug("Termina FicheroAlumnoJson()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
             }
             catch (Exception ex)
             {
@@ -36,9 +37,9 @@ namespace Vueling.DataAccess.Dao
         {
             try
             {
-                logger.Debug("Empieza FicheroAlumnoJson()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 Ruta = ruta;
-                logger.Debug("Termina FicheroAlumnoJson()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
             }
             catch (Exception ex)
             {
@@ -51,12 +52,12 @@ namespace Vueling.DataAccess.Dao
         {
             try
             {
-                logger.Debug("Empieza Add()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 List<Alumno> alumnosFicheroExistente = DeserializeJson();
                 alumnosFicheroExistente.Add(alumno);
                 string jsonNuevo = JsonConvert.SerializeObject(alumnosFicheroExistente, Formatting.Indented);
                 FileUtils.EscribirFichero(jsonNuevo, Ruta);
-                logger.Debug("Termina Add()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
                 return Select(alumno.GUID);
             }
             catch (Exception ex)
@@ -70,13 +71,13 @@ namespace Vueling.DataAccess.Dao
         {
             try
             {
-                logger.Debug("Empieza Select()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 List<Alumno> alumnosFicheroExistente = DeserializeJson();
                 foreach (Alumno alumno in alumnosFicheroExistente)
                 {
                     if (alumno.GUID == guid) return alumno;
                 }
-                logger.Debug("Termina Select()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
                 return null;
             }
             catch (Exception ex)
@@ -90,13 +91,13 @@ namespace Vueling.DataAccess.Dao
         {
             try
             {
-                logger.Debug("Empieza DeserializeJson()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 List<Alumno> alumnosFicheroExistente = new List<Alumno>();
                 if (File.Exists(Ruta) && new FileInfo(Ruta).Length != 0)
                 {
                     alumnosFicheroExistente = JsonConvert.DeserializeObject<List<Alumno>>(File.ReadAllText(Ruta));
                 }
-                logger.Debug("Termina DeserializeJson()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
                 return alumnosFicheroExistente;
             }
             catch (Exception ex)
@@ -110,9 +111,9 @@ namespace Vueling.DataAccess.Dao
         {
             try
             {
-                logger.Debug("Empieza GetAll()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 List<Alumno> alumnos = DeserializeJson();
-                logger.Debug("Termina GetAll()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
                 return alumnos;
             }
             catch (Exception ex)
@@ -126,9 +127,9 @@ namespace Vueling.DataAccess.Dao
         {
             try
             {
-                logger.Debug("Empieza CrearListado()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 ListadoAlumnosJson listadoAlumnosJson = ListadoAlumnosJson.Instance();
-                logger.Debug("Termina CrearListado()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
                 return listadoAlumnosJson.ListadoAlumnos;
             }
             catch (Exception ex)

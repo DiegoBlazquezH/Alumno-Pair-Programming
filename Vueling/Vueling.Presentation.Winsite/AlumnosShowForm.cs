@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using Vueling.Business.Logic;
 using Vueling.Common.Logic;
 using Vueling.Common.Logic.Model;
+using Vueling.Common.Logic.Properties;
 using static Vueling.Common.Logic.Enums.ExtensionesFicheros;
 
 namespace Vueling.Presentation.Winsite
@@ -20,7 +21,7 @@ namespace Vueling.Presentation.Winsite
         {
             try
             {
-                logger.Debug("Empieza AlumnoShowForm()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 InitializeComponent();
                 alumnoBL = new AlumnoBL();                
                 CargarDatosGrid();
@@ -36,9 +37,9 @@ namespace Vueling.Presentation.Winsite
         {
             try
             {
-                logger.Debug("Empieza CargarDatosGrid()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 buttonTxt_Click(null, null);
-                logger.Debug("Termina CargarDatosGrid()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
             }
             catch (Exception ex)
             {
@@ -51,13 +52,14 @@ namespace Vueling.Presentation.Winsite
         {
             try
             {
-                logger.Debug("Empieza buttonJson_Click()");
+                var button = (Button)sender;
+                logger.Debug(button.Name + " " + LogStrings.Clicked);
                 alumnoBL.SeleccionarTipoFichero(Extension.JSON);
                 alumnos = alumnoBL.GetSingletonInstance();
                 var source = new BindingSource();
                 source.DataSource = alumnos;
                 dataGridAlumnos.DataSource = source;                
-                logger.Debug("Termina buttonJson_Click()");
+                logger.Debug(button.Name + " " + LogStrings.Ends);
             }
             catch (Exception ex)
             {
@@ -71,13 +73,14 @@ namespace Vueling.Presentation.Winsite
         {
             try
             {
-                logger.Debug("Empieza buttonXml_Click()");
+                var button = (Button)sender;
+                logger.Debug(button.Name + " " + LogStrings.Clicked);
                 alumnoBL.SeleccionarTipoFichero(Extension.XML);
                 alumnos = alumnoBL.GetSingletonInstance();
                 var source = new BindingSource();
                 source.DataSource = alumnos;
                 dataGridAlumnos.DataSource = source;                
-                logger.Debug("Termina buttonXml_Click()");
+                logger.Debug(button.Name + " " + LogStrings.Ends);
             }
             catch (Exception ex)
             {
@@ -90,13 +93,14 @@ namespace Vueling.Presentation.Winsite
         {
             try
             {
-                logger.Debug("Empieza buttonTxt_Click()");
+                var button = (Button)sender;
+                logger.Debug(button.Name + " " + LogStrings.Clicked);
                 alumnoBL.SeleccionarTipoFichero(Extension.TXT);
                 alumnos = alumnoBL.GetAll();
                 var source = new BindingSource();
                 source.DataSource = alumnos;
                 dataGridAlumnos.DataSource = source;                
-                logger.Debug("Termina buttonTxt_Click()");
+                logger.Debug(button.Name + " " + LogStrings.Ends);
             }
             catch (Exception ex)
             {
@@ -109,7 +113,8 @@ namespace Vueling.Presentation.Winsite
         {
             try
             {
-                logger.Debug("Empieza buttonBuscar_Click()");
+                var button = (Button)sender;
+                logger.Debug(button.Name + " " + LogStrings.Clicked);
                 string guid = txtGuid.Text;
                 string nombre = txtNombre.Text;
                 string apellidos = txtApellidos.Text;
@@ -124,7 +129,7 @@ namespace Vueling.Presentation.Winsite
                 var source = new BindingSource();                
                 source.DataSource = result;
                 dataGridAlumnos.DataSource = source;
-                logger.Debug("Termina buttonBuscar_Click()");
+                logger.Debug(button.Name + " " + LogStrings.Ends);
             }
             catch (Exception ex)
             {
@@ -137,11 +142,11 @@ namespace Vueling.Presentation.Winsite
         {
             try
             {
-                logger.Debug("Empieza chckBxFechaRegistro_CheckedChanged()");
                 CheckBox checkBox = (CheckBox)sender;
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);                
                 if (checkBox.Checked) dtpFechaRegistro.Enabled = true;
                 else dtpFechaRegistro.Enabled = false;
-                logger.Debug("Termina chckBxFechaRegistro_CheckedChanged()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
             }
             catch (Exception ex)
             {
@@ -154,11 +159,11 @@ namespace Vueling.Presentation.Winsite
         {
             try
             {
-                logger.Debug("Empieza chckBxFechaNacimiento_CheckedChanged()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 CheckBox checkBox = (CheckBox)sender;
                 if (checkBox.Checked) dtpFechaNacimiento.Enabled = true;
                 else dtpFechaNacimiento.Enabled = false;
-                logger.Debug("Termina chckBxFechaNacimiento_CheckedChanged()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
             }
             catch (Exception ex)
             {

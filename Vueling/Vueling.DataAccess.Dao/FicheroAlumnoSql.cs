@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Vueling.Common.Logic;
 using Vueling.Common.Logic.Model;
+using Vueling.Common.Logic.Properties;
 using Vueling.DataAccess.Dao.Interfaces;
 
 namespace Vueling.DataAccess.Dao
@@ -19,9 +20,9 @@ namespace Vueling.DataAccess.Dao
         {
             try
             {
-                logger.Debug("Empieza FicheroAlumnoJson()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 //ConnectionString = ;
-                logger.Debug("Termina FicheroAlumnoJson()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
             }
             catch (Exception ex)
             {

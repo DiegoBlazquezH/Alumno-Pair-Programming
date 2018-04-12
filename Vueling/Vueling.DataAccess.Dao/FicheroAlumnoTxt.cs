@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Vueling.Common.Logic;
 using Vueling.Common.Logic.Model;
+using Vueling.Common.Logic.Properties;
 using Vueling.DataAccess.Dao.Interfaces;
 
 namespace Vueling.DataAccess.Dao
@@ -20,9 +21,9 @@ namespace Vueling.DataAccess.Dao
         {
             try
             {
-                logger.Debug("Empieza FicheroAlumnoTxt()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 Ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + "ListadoAlumnos.txt";
-                logger.Debug("Termina FicheroAlumnoTxt()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
 
             }
             catch (Exception ex)
@@ -36,9 +37,9 @@ namespace Vueling.DataAccess.Dao
         {
             try
             {
-                logger.Debug("Empieza FicheroAlumnoTxt()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 Ruta = ruta;
-                logger.Debug("Termina FicheroAlumnoTxt()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
             }
             catch (Exception ex)
             {
@@ -52,12 +53,12 @@ namespace Vueling.DataAccess.Dao
         {
             try
             {
-                logger.Debug("Empieza Add()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 using (StreamWriter sw = File.AppendText(Ruta))
                 {
                     sw.WriteLine(alumno.ToString());
                 }
-                logger.Debug("Termina Add()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
                 return Select(alumno.GUID);
             }
             catch (Exception ex)
@@ -73,7 +74,7 @@ namespace Vueling.DataAccess.Dao
 
             try
             {
-                logger.Debug("Empieza Select()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 using (StreamReader sr = new StreamReader(Ruta))
                 {
                     while ((linea = sr.ReadLine()) != null)
@@ -82,7 +83,7 @@ namespace Vueling.DataAccess.Dao
                         if (alumno.GUID == guid) return alumno;
                     }
                 }
-                logger.Debug("Termina Select()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
                 return null;
             }
             catch (Exception ex)
@@ -96,13 +97,13 @@ namespace Vueling.DataAccess.Dao
         {
             try
             {
-                logger.Debug("Empieza Deserialize()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 List<string> paramsAlumno = alumnoTxt.Split(',').ToList<string>();
 
                 Alumno alumno = new Alumno(Guid.Parse(paramsAlumno[0]), Convert.ToInt32(paramsAlumno[1]), paramsAlumno[2],
                         paramsAlumno[3], paramsAlumno[4], DateTime.Parse(paramsAlumno[5]),
                         Convert.ToInt32(paramsAlumno[6]), DateTime.Parse(paramsAlumno[7]));
-                logger.Debug("Termina Deserialize()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
                 return alumno;
             }
             catch (Exception ex)
@@ -117,7 +118,7 @@ namespace Vueling.DataAccess.Dao
             
             try
             {
-                logger.Debug("Empieza GetAll()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 List<Alumno> alumnos = new List<Alumno>();
                 string linea;
 
@@ -129,7 +130,7 @@ namespace Vueling.DataAccess.Dao
                         alumnos.Add(alumno);
                     }
                 }
-                logger.Debug("Termina GetAll()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
                 return alumnos;
             }
             catch (Exception ex)
@@ -143,9 +144,9 @@ namespace Vueling.DataAccess.Dao
         {
             try
             {
-                logger.Debug("Empieza CrearListado()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 List<Alumno> alumnos = GetAll();
-                logger.Debug("Termina CrearListado()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
                 return alumnos;
                 
             }

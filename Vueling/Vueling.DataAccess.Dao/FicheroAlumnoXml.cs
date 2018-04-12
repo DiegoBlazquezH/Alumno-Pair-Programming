@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Xml.Serialization;
 using Vueling.Common.Logic;
 using Vueling.Common.Logic.Model;
+using Vueling.Common.Logic.Properties;
 using Vueling.DataAccess.Dao.Interfaces;
 
 namespace Vueling.DataAccess.Dao
@@ -21,9 +22,9 @@ namespace Vueling.DataAccess.Dao
         {
             try
             {
-                logger.Debug("Empieza FicheroAlumnoXml()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 Ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + "ListadoAlumnos.xml";
-                logger.Debug("Termina FicheroAlumnoXml()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
             }
             catch (Exception ex)
             {
@@ -36,9 +37,9 @@ namespace Vueling.DataAccess.Dao
         {
             try
             {
-                logger.Debug("Empieza FicheroAlumnoXml()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 Ruta = ruta;
-                logger.Debug("Termina FicheroAlumnoXml()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
             }
             catch (Exception ex)
             {
@@ -51,12 +52,12 @@ namespace Vueling.DataAccess.Dao
         {
             try
             {
-                logger.Debug("Empieza FicheroAlumnoXml()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 List<Alumno> alumnosFicheroExistente = DeserializeXml();
                 alumnosFicheroExistente.Add(alumno);
                 string xmlNuevo = SerializeXml(alumnosFicheroExistente);
                 FileUtils.EscribirFichero(xmlNuevo, Ruta);
-                logger.Debug("Termina FicheroAlumnoXml()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
                 return Select(alumno.GUID);
             }
             catch (Exception ex)
@@ -70,13 +71,13 @@ namespace Vueling.DataAccess.Dao
         {
             try
             {
-                logger.Debug("Empieza Select()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 List<Alumno> alumnosFicheroExistente = DeserializeXml();
                 foreach (Alumno alumno in alumnosFicheroExistente)
                 {
                     if (alumno.GUID == guid) return alumno;
                 }
-                logger.Debug("Termina Select()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
                 return null;
             }
             catch (Exception ex)
@@ -90,12 +91,12 @@ namespace Vueling.DataAccess.Dao
         {
             try
             {
-                logger.Debug("Empieza SerializeXml()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Alumno>));
                 using (StringWriter writer = new StringWriter())
                 {
                     xmlSerializer.Serialize(writer, alumnosFicheroExistente);
-                    logger.Debug("Termina SerializeXml()");
+                    logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
                     return writer.ToString();
                 }
             }
@@ -110,7 +111,7 @@ namespace Vueling.DataAccess.Dao
         {
             try
             {
-                logger.Debug("Empieza DeserializeXml()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 List<Alumno> alumnosFicheroExistente = new List<Alumno>();
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Alumno>));
 
@@ -118,7 +119,7 @@ namespace Vueling.DataAccess.Dao
                 {
                     alumnosFicheroExistente = (List<Alumno>)xmlSerializer.Deserialize(new StringReader(File.ReadAllText(Ruta)));
                 }
-                logger.Debug("Termina FicheroAlumnoXml()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
                 return alumnosFicheroExistente;
             }
             catch (Exception ex)
@@ -132,9 +133,9 @@ namespace Vueling.DataAccess.Dao
         {
             try
             {
-                logger.Debug("Empieza CrearListado()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 ListadoAlumnosXml listadoAlumnosXml = ListadoAlumnosXml.Instance();
-                logger.Debug("Termina CrearListado()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
                 return listadoAlumnosXml.ListadoAlumnos;
             }
             catch (Exception ex)
@@ -148,9 +149,9 @@ namespace Vueling.DataAccess.Dao
         {
             try
             {
-                logger.Debug("Empieza GetAll()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 List<Alumno> alumnos = DeserializeXml();
-                logger.Debug("Termina GetAll()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
                 return alumnos;
             }
             catch (Exception ex)

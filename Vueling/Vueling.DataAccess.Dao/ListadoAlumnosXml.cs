@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using Vueling.Common.Logic.Properties;
 using Vueling.DataAccess.Dao;
 using Vueling.DataAccess.Dao.Interfaces;
 
@@ -16,7 +17,7 @@ namespace Vueling.Common.Logic.Model
         protected ListadoAlumnosXml()
         {
             ILogger logger = new Logger(MethodBase.GetCurrentMethod().DeclaringType);
-            logger.Debug("Instanciando ListadoAlumnosXml Singleton");
+            logger.Debug(LogStrings.Instantiating + " " + MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Singleton);
         }
 
         public static ListadoAlumnosXml Instance()
@@ -29,14 +30,14 @@ namespace Vueling.Common.Logic.Model
 
             try
             {
-                logger.Debug("Empieza Instance()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 if (_instance == null)
                 {
                     _instance = new ListadoAlumnosXml();
                     IFicheroAlumno ficheroAlumno = new FicheroAlumnoXml();
                     _instance.ListadoAlumnos = ficheroAlumno.GetAll();
                 }
-                logger.Debug("Termina Instance()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
                 return _instance;
             }
             catch (Exception ex)
