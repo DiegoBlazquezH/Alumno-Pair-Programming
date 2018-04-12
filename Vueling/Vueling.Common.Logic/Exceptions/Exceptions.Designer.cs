@@ -22,7 +22,7 @@ namespace Vueling.Common.Logic.Exceptions {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Exceptions {
+    public class Exceptions {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Vueling.Common.Logic.Exceptions {
         ///   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Vueling.Common.Logic.Exceptions.Exceptions", typeof(Exceptions).Assembly);
@@ -51,7 +51,7 @@ namespace Vueling.Common.Logic.Exceptions {
         ///   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,11 +61,101 @@ namespace Vueling.Common.Logic.Exceptions {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Uno de los argumentos proporcionados no es válido..
+        /// </summary>
+        public static string ArgumentException {
+            get {
+                return ResourceManager.GetString("ArgumentException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Argumento null no válido para uno de los métodos..
+        /// </summary>
+        public static string ArgumentNullException {
+            get {
+                return ResourceManager.GetString("ArgumentNullException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Valor de un argumento fuera del intervalo permitido..
+        /// </summary>
+        public static string ArgumentOutOfRangeException {
+            get {
+                return ResourceManager.GetString("ArgumentOutOfRangeException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Directorio no encontrado..
+        /// </summary>
+        public static string DirectoryNotFoundException {
+            get {
+                return ResourceManager.GetString("DirectoryNotFoundException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Archivo no encontrado..
         /// </summary>
-        internal static string FileNotFound {
+        public static string FileNotFoundException {
             get {
-                return ResourceManager.GetString("FileNotFound", resourceCulture);
+                return ResourceManager.GetString("FileNotFoundException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Formato no válido o incorrecto..
+        /// </summary>
+        public static string FormatException {
+            get {
+                return ResourceManager.GetString("FormatException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error de E/S..
+        /// </summary>
+        public static string IOException {
+            get {
+                return ResourceManager.GetString("IOException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Memoria insuficiente para continuar con la ejecución..
+        /// </summary>
+        public static string OutOfMemoryException {
+            get {
+                return ResourceManager.GetString("OutOfMemoryException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Desbordamiento  por conversión incorrecta..
+        /// </summary>
+        public static string OverflowException {
+            get {
+                return ResourceManager.GetString("OverflowException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Una característica no se ha ejecutado en una plataforma concreta..
+        /// </summary>
+        public static string PlatformNotSupportedException {
+            get {
+                return ResourceManager.GetString("PlatformNotSupportedException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Se ha intentado invocar un destino incorrecto..
+        /// </summary>
+        public static string TargetException {
+            get {
+                return ResourceManager.GetString("TargetException", resourceCulture);
             }
         }
     }
