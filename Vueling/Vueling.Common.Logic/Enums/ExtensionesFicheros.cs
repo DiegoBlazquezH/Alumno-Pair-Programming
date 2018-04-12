@@ -11,6 +11,6 @@ namespace Vueling.Common.Logic.Enums
         public enum Extension
         {
             TXT = 1, JSON, XML, SQL
-        }        
+        }
     }
 }
