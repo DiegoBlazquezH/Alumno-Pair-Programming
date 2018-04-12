@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Threading;
+using Vueling.Common.Logic.Properties;
 
 namespace Vueling.Common.Logic.Helpers
 {
@@ -14,9 +15,9 @@ namespace Vueling.Common.Logic.Helpers
             
             if (String.IsNullOrEmpty(idioma))
             {
-                AppLanguage = "es-ES";
-                Environment.SetEnvironmentVariable("Language", "es-ES", EnvironmentVariableTarget.User);
-                ChangeLanguage("es-ES");
+                AppLanguage = Idiomas.Spanish;
+                Environment.SetEnvironmentVariable("Language", Idiomas.Spanish, EnvironmentVariableTarget.User);
+                ChangeLanguage(Idiomas.Spanish);
             }
             else
             {

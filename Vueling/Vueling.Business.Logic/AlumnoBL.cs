@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using Vueling.Common.Logic;
 using Vueling.Common.Logic.Model;
+using Vueling.Common.Logic.Properties;
 using Vueling.DataAccess.Dao;
 using Vueling.DataAccess.Dao.Interfaces;
 using static Vueling.Common.Logic.Enums.ExtensionesFicheros;
@@ -20,10 +21,10 @@ namespace Vueling.Business.Logic
         {
             try
             {
-                logger.Debug("Empieza AlumnoBL()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 FicheroFactory ficheroFactory = new FicheroFactory();
                 ficheroAlumno = ficheroFactory.CrearFichero((Extension)Enum.Parse(typeof(Extension), ConfigurationManager.AppSettings["tipoFichero"]));
-                logger.Debug("Termina AlumnoBL()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
             }
             catch (Exception ex)
             {
@@ -36,10 +37,10 @@ namespace Vueling.Business.Logic
         {
             try
             {
-                logger.Debug("Empieza Add()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 alumno.FechaCompletaAlta = DateTime.Now;
                 alumno.Edad = CalcularEdad(DateTime.Now, alumno.FechaNacimiento);
-                logger.Debug("Termina Add()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
                 return ficheroAlumno.Add(alumno);
             }
             catch (Exception ex)
@@ -53,7 +54,8 @@ namespace Vueling.Business.Logic
         {
             try
             {
-                logger.Debug("Empieza y termina CalcularEdad()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
                 return (Convert.ToInt32((fechaCompletaActual - fechaNacimiento).TotalDays) / 365);
             }
             catch (Exception ex)
@@ -67,10 +69,10 @@ namespace Vueling.Business.Logic
         {
             try
             {
-                logger.Debug("Empieza SeleccionarTipoFichero()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 FicheroFactory ficheroFactory = new FicheroFactory();
                 ficheroAlumno = ficheroFactory.CrearFichero(extension);
-                logger.Debug("Termina SeleccionarTipoFichero()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
             }
             catch (Exception ex)
             {
@@ -83,9 +85,9 @@ namespace Vueling.Business.Logic
         {
             try
             {
-                logger.Debug("Empieza GetAll()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 List<Alumno> alumnos = ficheroAlumno.GetAll();
-                logger.Debug("Termina GetAll()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
                 return alumnos;
             }
             catch (Exception ex)
@@ -98,9 +100,9 @@ namespace Vueling.Business.Logic
         {
             try
             {
-                logger.Debug("Empieza GetSingletonInstance()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 List<Alumno> alumnos = ficheroAlumno.GetSingletonInstance();
-                logger.Debug("Termina CrearListado()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
                 return alumnos;
             }
             catch (Exception ex)
@@ -116,7 +118,7 @@ namespace Vueling.Business.Logic
             try
             {
                 List<Alumno> alumnos = GetSingletonInstance();
-                logger.Debug("Empieza Filter()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 int idInt, edadInt;
                 var query = from alu in alumnos select alu;
                 if (!String.IsNullOrEmpty(guid))
@@ -145,7 +147,7 @@ namespace Vueling.Business.Logic
                 query = query.OrderBy(alu => alu.ID);
 
                 var result = query.ToList();
-                logger.Debug("Termina Filter()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
                 return result;
             }
             catch (Exception ex)

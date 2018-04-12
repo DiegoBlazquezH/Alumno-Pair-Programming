@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using Vueling.Common.Logic;
+using Vueling.Common.Logic.Properties;
 
 namespace Vueling.DataAccess.Dao
 {
@@ -16,7 +13,7 @@ namespace Vueling.DataAccess.Dao
 
             ILogger logger = new Logger(MethodBase.GetCurrentMethod().DeclaringType);
 
-            logger.Debug("Empieza EscribirFichero()");
+            logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
             try
             {
                 using (StreamWriter sw = File.CreateText(Ruta))
@@ -26,22 +23,11 @@ namespace Vueling.DataAccess.Dao
                 }
             }
             catch (Exception ex)
-            {
-                if (ex is UnauthorizedAccessException)
-                {
-                    logger.Exception(ex, "EscribirFichero() - Error de fichero, acceso no autorizado");
-                }
-                else if(ex is DirectoryNotFoundException)
-                {
-                    logger.Exception(ex, "EscribirFichero() - Error de fichero, fichero no encontrado");
-                }
-                else
-                {
-                    logger.Exception(ex, "EscribirFichero() - Error de fichero");
-                }
+            {                
+                logger.Exception(ex);                
                 throw;
             }
-            logger.Debug("Termina EscribirFichero()");
+            logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
         }
                 
     }

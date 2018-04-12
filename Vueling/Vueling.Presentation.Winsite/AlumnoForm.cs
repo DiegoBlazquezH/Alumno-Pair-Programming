@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
+using System.Resources;
 using System.Windows.Forms;
 using Vueling.Business.Logic;
 using Vueling.Common.Logic;
 using Vueling.Common.Logic.Enums;
 using Vueling.Common.Logic.Helpers;
 using Vueling.Common.Logic.Model;
+using Vueling.Common.Logic.Properties;
 using static Vueling.Common.Logic.Enums.ExtensionesFicheros;
 
 namespace Vueling.Presentation.Winsite
@@ -17,13 +19,13 @@ namespace Vueling.Presentation.Winsite
     {
         private Alumno alumno;
         private IAlumnoBL alumnoBL;
-        ILogger logger = new Logger(MethodBase.GetCurrentMethod().DeclaringType);
-        
+        ILogger logger = new Logger(MethodBase.GetCurrentMethod().DeclaringType);        
+
         public AlumnoForm()
         {
             try
-            {
-                logger.Debug("Empieza AlumnoForm()");
+            {               
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 Language.InitializeLanguage();
                 InitializeComponent();   
                 alumno = new Alumno();
@@ -40,15 +42,16 @@ namespace Vueling.Presentation.Winsite
         {
             try
             {
-                logger.Debug("Clickado el botón Txt");
+                var button = (Button)sender;
+                logger.Debug(button.Name + " " + LogStrings.Clicked);
                 LoadAlumnoData();
                 alumnoBL.SeleccionarTipoFichero(Extension.TXT);
                 alumnoBL.Add(alumno);
-                logger.Debug("Termina el botón TXT");
+                logger.Debug(button.Name + " " + LogStrings.Ends);
             }
             catch (Exception ex)
             {
-                logger.Exception(ex);
+                logger.Exception(ex);                
                 MessageBox.Show(ex.Message);
             }
         }
@@ -57,11 +60,12 @@ namespace Vueling.Presentation.Winsite
         {
             try
             {
-                logger.Debug("Clickado el botón Json");
+                var button = (Button)sender;
+                logger.Debug(button.Name + " " + LogStrings.Clicked);
                 LoadAlumnoData();
                 alumnoBL.SeleccionarTipoFichero(Extension.JSON);
                 alumnoBL.Add(alumno);
-                logger.Debug("Termina el botón Json");
+                logger.Debug(button.Name + " " + LogStrings.Ends);
             }
             catch (Exception ex)
             {
@@ -74,15 +78,16 @@ namespace Vueling.Presentation.Winsite
         {
             try
             {
-                logger.Debug("Clickado el botón Xml");
+                var button = (Button)sender;
+                logger.Debug(button.Name + " " + LogStrings.Clicked);
                 LoadAlumnoData();
                 alumnoBL.SeleccionarTipoFichero(Extension.XML);
                 alumnoBL.Add(alumno);
-                logger.Debug("Termina el botón Xml");
+                logger.Debug(button.Name + " " + LogStrings.Ends);
             }
             catch (Exception ex)
             {
-                logger.Exception(ex);
+                logger.Exception(ex);                
                 MessageBox.Show(ex.Message);
             }
         }
@@ -91,14 +96,14 @@ namespace Vueling.Presentation.Winsite
         {
             try
             {
-                logger.Debug("Empieza LoadAlumnoData()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 alumno.SetGuid();
                 alumno.ID = Convert.ToInt32(textBoxID.Text);
                 alumno.Nombre = textBoxNombre.Text;
                 alumno.Apellidos = textBoxApellidos.Text;
                 alumno.DNI = textBoxDNI.Text;
                 alumno.FechaNacimiento = textBoxNacimiento.Value.Date;
-                logger.Debug("Termina LoadAlumnoData()");
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
             }
             catch (Exception ex)
             {
@@ -112,8 +117,9 @@ namespace Vueling.Presentation.Winsite
         {
             try
             {
-                logger.Debug("Muestra AlumnosShow");                
+                             
                 AlumnosShowForm alumnosShowForm = new AlumnosShowForm();
+                logger.Debug(LogStrings.Show + " " + alumnosShowForm.GetType().Name);
                 alumnosShowForm.ShowDialog();
             }
             catch (Exception ex)
@@ -130,13 +136,13 @@ namespace Vueling.Presentation.Winsite
             switch (idioma)
             {
                 case Idioma.Catalan:
-                    Language.ChangeLanguage("ca-ES");
+                    Language.ChangeLanguage(Idiomas.Catalan);
                     break;
                 case Idioma.English:
-                    Language.ChangeLanguage("en-GB");
+                    Language.ChangeLanguage(Idiomas.English);
                     break;                
                 case Idioma.Spanish:
-                    Language.ChangeLanguage("es-ES");
+                    Language.ChangeLanguage(Idiomas.Spanish);
                     break;
             }            
             UpdateControls();
