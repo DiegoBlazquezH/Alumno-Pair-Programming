@@ -14,7 +14,7 @@ namespace Vueling.DataAccess.Dao
 {
     public class FicheroAlumnoJson : IFicheroAlumno
     {
-        public string Ruta { get; set; }
+        private string Ruta { get; set; }
         private readonly ILogger logger = new Logger(MethodBase.GetCurrentMethod().DeclaringType);
 
         public FicheroAlumnoJson()

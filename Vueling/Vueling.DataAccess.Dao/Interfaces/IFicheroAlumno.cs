@@ -6,8 +6,6 @@ namespace Vueling.DataAccess.Dao.Interfaces
 {
     public interface IFicheroAlumno
     {
-        string Ruta { get; set; }
-
         Alumno Add(Alumno alumno);
         Alumno Select(Guid guid);
         List<Alumno> GetAll();

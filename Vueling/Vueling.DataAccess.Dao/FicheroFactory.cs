@@ -30,6 +30,9 @@ namespace Vueling.DataAccess.Dao
                     case Extension.XML:
                         logger.Debug("Empieza CrearFichero(XML)");
                         return new FicheroAlumnoXml();
+                    case Extension.SQL:
+                        logger.Debug("Empieza CrearFichero(SQL)");
+                        return new FicheroAlumnoSql();
                     default:
                         logger.Debug("Empieza CrearFichero(Texto Default)");
                         return new FicheroAlumnoTxt();
