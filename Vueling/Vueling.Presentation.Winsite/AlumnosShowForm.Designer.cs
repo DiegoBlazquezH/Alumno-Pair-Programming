@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlumnosShowForm));
             this.dataGridAlumnos = new System.Windows.Forms.DataGridView();
             this.buttonTxt = new System.Windows.Forms.Button();
             this.buttonJson = new System.Windows.Forms.Button();
@@ -56,212 +57,139 @@
             // 
             // dataGridAlumnos
             // 
+            resources.ApplyResources(this.dataGridAlumnos, "dataGridAlumnos");
             this.dataGridAlumnos.AllowUserToAddRows = false;
             this.dataGridAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridAlumnos.Location = new System.Drawing.Point(38, 162);
             this.dataGridAlumnos.Name = "dataGridAlumnos";
-            this.dataGridAlumnos.Size = new System.Drawing.Size(451, 176);
-            this.dataGridAlumnos.TabIndex = 0;
             // 
             // buttonTxt
             // 
-            this.buttonTxt.Location = new System.Drawing.Point(51, 354);
+            resources.ApplyResources(this.buttonTxt, "buttonTxt");
             this.buttonTxt.Name = "buttonTxt";
-            this.buttonTxt.Size = new System.Drawing.Size(75, 23);
-            this.buttonTxt.TabIndex = 1;
-            this.buttonTxt.Text = "Txt";
             this.buttonTxt.UseVisualStyleBackColor = true;
             this.buttonTxt.Click += new System.EventHandler(this.buttonTxt_Click);
             // 
             // buttonJson
             // 
-            this.buttonJson.Location = new System.Drawing.Point(226, 354);
+            resources.ApplyResources(this.buttonJson, "buttonJson");
             this.buttonJson.Name = "buttonJson";
-            this.buttonJson.Size = new System.Drawing.Size(75, 23);
-            this.buttonJson.TabIndex = 2;
-            this.buttonJson.Text = "Json";
             this.buttonJson.UseVisualStyleBackColor = true;
             this.buttonJson.Click += new System.EventHandler(this.buttonJson_Click);
             // 
             // buttonXml
             // 
-            this.buttonXml.Location = new System.Drawing.Point(400, 354);
+            resources.ApplyResources(this.buttonXml, "buttonXml");
             this.buttonXml.Name = "buttonXml";
-            this.buttonXml.Size = new System.Drawing.Size(75, 23);
-            this.buttonXml.TabIndex = 3;
-            this.buttonXml.Text = "Xml";
             this.buttonXml.UseVisualStyleBackColor = true;
             this.buttonXml.Click += new System.EventHandler(this.buttonXml_Click);
             // 
             // buttonBuscar
             // 
-            this.buttonBuscar.Location = new System.Drawing.Point(195, 125);
+            resources.ApplyResources(this.buttonBuscar, "buttonBuscar");
             this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(123, 23);
-            this.buttonBuscar.TabIndex = 4;
-            this.buttonBuscar.Text = "Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = true;
             this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
             // txtGuid
             // 
-            this.txtGuid.Location = new System.Drawing.Point(38, 30);
+            resources.ApplyResources(this.txtGuid, "txtGuid");
             this.txtGuid.Name = "txtGuid";
-            this.txtGuid.Size = new System.Drawing.Size(100, 20);
-            this.txtGuid.TabIndex = 5;
             // 
             // dtpFechaNacimiento
             // 
-            this.dtpFechaNacimiento.Enabled = false;
+            resources.ApplyResources(this.dtpFechaNacimiento, "dtpFechaNacimiento");
             this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(154, 76);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
-            this.dtpFechaNacimiento.Size = new System.Drawing.Size(100, 20);
-            this.dtpFechaNacimiento.TabIndex = 6;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(154, 30);
+            resources.ApplyResources(this.txtNombre, "txtNombre");
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre.TabIndex = 7;
             // 
             // txtApellidos
             // 
-            this.txtApellidos.Location = new System.Drawing.Point(272, 30);
+            resources.ApplyResources(this.txtApellidos, "txtApellidos");
             this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(100, 20);
-            this.txtApellidos.TabIndex = 8;
             // 
             // txtDni
             // 
-            this.txtDni.Location = new System.Drawing.Point(389, 30);
+            resources.ApplyResources(this.txtDni, "txtDni");
             this.txtDni.Name = "txtDni";
-            this.txtDni.Size = new System.Drawing.Size(100, 20);
-            this.txtDni.TabIndex = 9;
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(38, 76);
+            resources.ApplyResources(this.txtId, "txtId");
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(100, 20);
-            this.txtId.TabIndex = 10;
             // 
             // txtEdad
             // 
-            this.txtEdad.Location = new System.Drawing.Point(272, 76);
+            resources.ApplyResources(this.txtEdad, "txtEdad");
             this.txtEdad.Name = "txtEdad";
-            this.txtEdad.Size = new System.Drawing.Size(100, 20);
-            this.txtEdad.TabIndex = 11;
             // 
             // dtpFechaRegistro
             // 
-            this.dtpFechaRegistro.Enabled = false;
+            resources.ApplyResources(this.dtpFechaRegistro, "dtpFechaRegistro");
             this.dtpFechaRegistro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaRegistro.Location = new System.Drawing.Point(389, 76);
             this.dtpFechaRegistro.Name = "dtpFechaRegistro";
-            this.dtpFechaRegistro.Size = new System.Drawing.Size(100, 20);
-            this.dtpFechaRegistro.TabIndex = 12;
             // 
             // labelGuid
             // 
-            this.labelGuid.AutoSize = true;
-            this.labelGuid.Location = new System.Drawing.Point(35, 15);
+            resources.ApplyResources(this.labelGuid, "labelGuid");
             this.labelGuid.Name = "labelGuid";
-            this.labelGuid.Size = new System.Drawing.Size(34, 13);
-            this.labelGuid.TabIndex = 13;
-            this.labelGuid.Text = "GUID";
             // 
             // labelNombre
             // 
-            this.labelNombre.AutoSize = true;
-            this.labelNombre.Location = new System.Drawing.Point(151, 15);
+            resources.ApplyResources(this.labelNombre, "labelNombre");
             this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(44, 13);
-            this.labelNombre.TabIndex = 14;
-            this.labelNombre.Text = "Nombre";
             // 
             // labelApellidos
             // 
-            this.labelApellidos.AutoSize = true;
-            this.labelApellidos.Location = new System.Drawing.Point(269, 15);
+            resources.ApplyResources(this.labelApellidos, "labelApellidos");
             this.labelApellidos.Name = "labelApellidos";
-            this.labelApellidos.Size = new System.Drawing.Size(49, 13);
-            this.labelApellidos.TabIndex = 15;
-            this.labelApellidos.Text = "Apellidos";
             // 
             // labelDni
             // 
-            this.labelDni.AutoSize = true;
-            this.labelDni.Location = new System.Drawing.Point(386, 15);
+            resources.ApplyResources(this.labelDni, "labelDni");
             this.labelDni.Name = "labelDni";
-            this.labelDni.Size = new System.Drawing.Size(26, 13);
-            this.labelDni.TabIndex = 16;
-            this.labelDni.Text = "DNI";
             // 
             // labelId
             // 
-            this.labelId.AutoSize = true;
-            this.labelId.Location = new System.Drawing.Point(35, 60);
+            resources.ApplyResources(this.labelId, "labelId");
             this.labelId.Name = "labelId";
-            this.labelId.Size = new System.Drawing.Size(16, 13);
-            this.labelId.TabIndex = 17;
-            this.labelId.Text = "Id";
             // 
             // labelFechaNacimiento
             // 
-            this.labelFechaNacimiento.AutoSize = true;
-            this.labelFechaNacimiento.Location = new System.Drawing.Point(151, 60);
+            resources.ApplyResources(this.labelFechaNacimiento, "labelFechaNacimiento");
             this.labelFechaNacimiento.Name = "labelFechaNacimiento";
-            this.labelFechaNacimiento.Size = new System.Drawing.Size(106, 13);
-            this.labelFechaNacimiento.TabIndex = 18;
-            this.labelFechaNacimiento.Text = "Fecha de nacimiento";
             // 
             // labelEdad
             // 
-            this.labelEdad.AutoSize = true;
-            this.labelEdad.Location = new System.Drawing.Point(269, 62);
+            resources.ApplyResources(this.labelEdad, "labelEdad");
             this.labelEdad.Name = "labelEdad";
-            this.labelEdad.Size = new System.Drawing.Size(32, 13);
-            this.labelEdad.TabIndex = 19;
-            this.labelEdad.Text = "Edad";
             // 
             // labelFechaRegistro
             // 
-            this.labelFechaRegistro.AutoSize = true;
-            this.labelFechaRegistro.Location = new System.Drawing.Point(386, 62);
+            resources.ApplyResources(this.labelFechaRegistro, "labelFechaRegistro");
             this.labelFechaRegistro.Name = "labelFechaRegistro";
-            this.labelFechaRegistro.Size = new System.Drawing.Size(89, 13);
-            this.labelFechaRegistro.TabIndex = 20;
-            this.labelFechaRegistro.Text = "Fecha de registro";
             // 
             // chckBxFechaRegistro
             // 
-            this.chckBxFechaRegistro.AutoSize = true;
-            this.chckBxFechaRegistro.Location = new System.Drawing.Point(425, 102);
+            resources.ApplyResources(this.chckBxFechaRegistro, "chckBxFechaRegistro");
             this.chckBxFechaRegistro.Name = "chckBxFechaRegistro";
-            this.chckBxFechaRegistro.Size = new System.Drawing.Size(64, 17);
-            this.chckBxFechaRegistro.TabIndex = 21;
-            this.chckBxFechaRegistro.Text = "Habilitar";
             this.chckBxFechaRegistro.UseVisualStyleBackColor = true;
             this.chckBxFechaRegistro.CheckedChanged += new System.EventHandler(this.chckBxFechaRegistro_CheckedChanged);
             // 
             // chckBxFechaNacimiento
             // 
-            this.chckBxFechaNacimiento.AutoSize = true;
-            this.chckBxFechaNacimiento.Location = new System.Drawing.Point(154, 102);
+            resources.ApplyResources(this.chckBxFechaNacimiento, "chckBxFechaNacimiento");
             this.chckBxFechaNacimiento.Name = "chckBxFechaNacimiento";
-            this.chckBxFechaNacimiento.Size = new System.Drawing.Size(64, 17);
-            this.chckBxFechaNacimiento.TabIndex = 22;
-            this.chckBxFechaNacimiento.Text = "Habilitar";
             this.chckBxFechaNacimiento.UseVisualStyleBackColor = true;
             this.chckBxFechaNacimiento.CheckedChanged += new System.EventHandler(this.chckBxFechaNacimiento_CheckedChanged);
             // 
             // AlumnosShowForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(543, 389);
             this.Controls.Add(this.chckBxFechaNacimiento);
             this.Controls.Add(this.chckBxFechaRegistro);
             this.Controls.Add(this.labelFechaRegistro);
@@ -286,7 +214,6 @@
             this.Controls.Add(this.buttonTxt);
             this.Controls.Add(this.dataGridAlumnos);
             this.Name = "AlumnosShowForm";
-            this.Text = "AlumnosShowForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAlumnos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vueling.Business.Logic;
 using Vueling.Common.Logic;
+using Vueling.Common.Logic.Enums;
+using Vueling.Common.Logic.Helpers;
 using Vueling.Common.Logic.Model;
-using Vueling.DataAccess.Dao;
 using static Vueling.Common.Logic.Enums.ExtensionesFicheros;
 
 namespace Vueling.Presentation.Winsite
@@ -21,13 +18,14 @@ namespace Vueling.Presentation.Winsite
         private Alumno alumno;
         private IAlumnoBL alumnoBL;
         ILogger logger = new Logger(MethodBase.GetCurrentMethod().DeclaringType);
-
+        
         public AlumnoForm()
         {
             try
             {
                 logger.Debug("Empieza AlumnoForm()");
-                InitializeComponent();
+                Language.InitializeLanguage();
+                InitializeComponent();   
                 alumno = new Alumno();
                 alumnoBL = new AlumnoBL();
             }
@@ -114,7 +112,7 @@ namespace Vueling.Presentation.Winsite
         {
             try
             {
-                logger.Debug("Muestra AlumnosShow");
+                logger.Debug("Muestra AlumnosShow");                
                 AlumnosShowForm alumnosShowForm = new AlumnosShowForm();
                 alumnosShowForm.ShowDialog();
             }
@@ -123,6 +121,45 @@ namespace Vueling.Presentation.Winsite
                 logger.Exception(ex);
                 throw;
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox box = (ComboBox)sender;
+            Idioma idioma = (Idioma)box.SelectedIndex;
+            switch (idioma)
+            {
+                case Idioma.Catalan:
+                    Language.ChangeLanguage("ca-ES");
+                    break;
+                case Idioma.English:
+                    Language.ChangeLanguage("en-GB");
+                    break;                
+                case Idioma.Spanish:
+                    Language.ChangeLanguage("es-ES");
+                    break;
+            }            
+            UpdateControls();
+        }
+
+        private void UpdateControls()
+        {            
+            var resources = new ComponentResourceManager(this.GetType());            
+            GetChildren(this).ToList().ForEach(c =>
+            {
+                resources.ApplyResources(c, c.Name);
+            });            
+            this.Text = resources.GetString("$this.Text");
+        }
+        public IEnumerable<Control> GetChildren(Control control)
+        {
+            var controls = control.Controls.Cast<Control>();
+            return controls.SelectMany(ctrl => GetChildren(ctrl)).Concat(controls);
+        }
+        public IEnumerable<Control> GetParent(Control control)
+        {
+            var controls = control.Controls.Cast<Control>();
+            return controls.SelectMany(ctrl => GetParent(ctrl)).Concat(controls);
         }
     }
 }
