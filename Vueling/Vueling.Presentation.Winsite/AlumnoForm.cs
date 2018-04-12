@@ -9,6 +9,7 @@ using Vueling.Common.Logic;
 using Vueling.Common.Logic.Enums;
 using Vueling.Common.Logic.Helpers;
 using Vueling.Common.Logic.Model;
+using Vueling.Common.Logic.Properties;
 using static Vueling.Common.Logic.Enums.ExtensionesFicheros;
 
 namespace Vueling.Presentation.Winsite
@@ -130,13 +131,13 @@ namespace Vueling.Presentation.Winsite
             switch (idioma)
             {
                 case Idioma.Catalan:
-                    Language.ChangeLanguage("ca-ES");
+                    Language.ChangeLanguage(Idiomas.Catalan);
                     break;
                 case Idioma.English:
-                    Language.ChangeLanguage("en-GB");
+                    Language.ChangeLanguage(Idiomas.English);
                     break;                
                 case Idioma.Spanish:
-                    Language.ChangeLanguage("es-ES");
+                    Language.ChangeLanguage(Idiomas.Spanish);
                     break;
             }            
             UpdateControls();
