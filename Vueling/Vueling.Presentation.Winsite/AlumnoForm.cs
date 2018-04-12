@@ -33,7 +33,7 @@ namespace Vueling.Presentation.Winsite
             }
             catch (Exception ex)
             {
-                logger.Exception(ex);
+                logger.Exception(ex);                
                 MessageBox.Show(ex.Message);
             }
         }

@@ -11,8 +11,7 @@ namespace Vueling.Common.Logic.Model
     {
         private static ListadoAlumnosJson _instance;
         public List<Alumno> ListadoAlumnos { get; set; }
-
-        // Constructor is 'protected'
+        private static object syncLock = new object();
 
         protected ListadoAlumnosJson()
         {
@@ -22,10 +21,6 @@ namespace Vueling.Common.Logic.Model
 
         public static ListadoAlumnosJson Instance()
         {
-            // Uses lazy initialization.
-
-            // Note: this is not thread safe.
-
             ILogger logger = new Logger(MethodBase.GetCurrentMethod().DeclaringType);
 
             try
@@ -33,9 +28,15 @@ namespace Vueling.Common.Logic.Model
                 logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 if (_instance == null)
                 {
-                    _instance = new ListadoAlumnosJson();
-                    IFicheroAlumno ficheroAlumno = new FicheroAlumnoJson();
-                    _instance.ListadoAlumnos = ficheroAlumno.GetAll();
+                    lock (syncLock)
+                    {
+                        if (_instance == null)
+                        {
+                            _instance = new ListadoAlumnosJson();
+                            IFicheroAlumno ficheroAlumno = new FicheroAlumnoJson();
+                            _instance.ListadoAlumnos = ficheroAlumno.GetAll();
+                        }
+                    }
                 }
                 logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
                 return _instance;
