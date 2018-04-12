@@ -20,7 +20,8 @@ namespace Vueling.Common.Logic.Helpers
                 ChangeLanguage(Idiomas.Spanish);
             }
             else
-            {                
+            {
+                AppLanguage = idioma;
                 ChangeLanguage(idioma);                
             }            
         }

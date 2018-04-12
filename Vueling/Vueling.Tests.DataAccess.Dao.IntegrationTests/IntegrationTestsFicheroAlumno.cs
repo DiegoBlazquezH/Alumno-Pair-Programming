@@ -1,20 +1,16 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Vueling.DataAccess.Dao;
+﻿using Vueling.DataAccess.Dao.Interfaces;
+using System.IO;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Vueling.Business.Logic;
-using Vueling.DataAccess.Dao.Interfaces;
+using Vueling.DataAccess.Dao;
 using Vueling.Common.Logic.Model;
-using System.IO;
 using static Vueling.Common.Logic.Enums.ExtensionesFicheros;
 
-namespace Vueling.DataAccess.Dao.Tests
+namespace Vueling.Tests.DataAccess.Dao.IntegrationTests
 {
     [TestClass()]
-    public class TestsFicheroAlumno
+    public class IntegrationTestsFicheroAlumno
     {
         private readonly string Ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + "ListadoAlumnos.";
         private readonly FicheroFactory ficheroFactory = new FicheroFactory();
@@ -25,7 +21,7 @@ namespace Vueling.DataAccess.Dao.Tests
             if (File.Exists(Ruta + "txt")) File.Delete(Ruta + "txt");
             if (File.Exists(Ruta + "json")) File.Delete(Ruta + "json");
             if (File.Exists(Ruta + "xml")) File.Delete(Ruta + "xml");
-        } 
+        }
 
         [TestCleanup]
         public void CleanTest()
@@ -68,7 +64,5 @@ namespace Vueling.DataAccess.Dao.Tests
             Alumno alumnoAñadido = ficheroAlumnoXml.Add(alumno);
             Assert.IsTrue(alumno.Equals(alumnoAñadido));
         }
-
-
     }
 }

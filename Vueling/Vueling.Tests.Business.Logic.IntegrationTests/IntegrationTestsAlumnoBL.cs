@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Vueling.Business.Logic;
 
-namespace Vueling.Business.LogicTests
+namespace Vueling.Tests.Business.Logic.IntegrationTests
 {
     [TestClass]
-    public class TestsAlumnoBL
+    public class IntegrationTestsAlumnoBL
     {
         private readonly IAlumnoBL alumnoBL = new AlumnoBL();
 
@@ -14,7 +14,7 @@ namespace Vueling.Business.LogicTests
         {
             yield return new object[] { new DateTime(2018, 4, 4), new DateTime(1994, 1, 24), 24 };
             yield return new object[] { new DateTime(2018, 4, 4), new DateTime(1994, 6, 24), 23 };
-            yield return new object[] { new DateTime(2018, 4, 4), new DateTime(2000, 4,  4), 18 };
+            yield return new object[] { new DateTime(2018, 4, 4), new DateTime(2000, 4, 4), 18 };
         }
         [DataTestMethod]
         [DynamicData(nameof(DatosFechasEdad), DynamicDataSourceType.Method)]
