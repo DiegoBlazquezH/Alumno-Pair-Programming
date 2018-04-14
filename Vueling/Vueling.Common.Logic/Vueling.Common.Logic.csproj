@@ -47,8 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomSmtpAppender.cs" />
-    <Compile Include="Enums\ExtensionesFicheros.cs" />
-    <Compile Include="Enums\IdiomasAplicacion.cs" />
+    <Compile Include="Enums\Enums.cs" />
     <Compile Include="Exceptions\Exceptions.ca-ES.Designer.cs">
       <DependentUpon>Exceptions.ca-ES.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -76,10 +75,10 @@
     <Compile Include="Model\Persona.cs" />
     <Compile Include="Model\IVuelingObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Idiomas.Designer.cs">
+    <Compile Include="Properties\ConfigStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Idiomas.resx</DependentUpon>
+      <DependentUpon>ConfigStrings.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\LogStrings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -110,9 +109,9 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Exceptions.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Idiomas.resx">
+    <EmbeddedResource Include="Properties\ConfigStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Idiomas.Designer.cs</LastGenOutput>
+      <LastGenOutput>ConfigStrings.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\LogStrings.resx">

@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 using Vueling.Business.Logic;
 using Vueling.Common.Logic;
 using Vueling.Common.Logic.Enums;
-using Vueling.Common.Logic.Exceptions;
 using Vueling.Common.Logic.Helpers;
 using Vueling.Common.Logic.Model;
 using Vueling.Common.Logic.Properties;
-using static Vueling.Common.Logic.Enums.ExtensionesFicheros;
 
 namespace Vueling.Presentation.Winsite
 {
@@ -53,7 +50,7 @@ namespace Vueling.Presentation.Winsite
             catch (Exception ex)
             {
                 logger.Exception(ex);
-                ShowExceptionMessage(ex);
+                ExceptionMessage.Show(ex);
             }
         }
 
@@ -71,7 +68,7 @@ namespace Vueling.Presentation.Winsite
             catch (Exception ex)
             {
                 logger.Exception(ex);
-                ShowExceptionMessage(ex);
+                ExceptionMessage.Show(ex);
             }
         }
 
@@ -89,7 +86,7 @@ namespace Vueling.Presentation.Winsite
             catch (Exception ex)
             {
                 logger.Exception(ex);
-                ShowExceptionMessage(ex);
+                ExceptionMessage.Show(ex);
             }
         }
 
@@ -137,13 +134,13 @@ namespace Vueling.Presentation.Winsite
             switch (idioma)
             {
                 case Idioma.Catalan:
-                    Language.ChangeLanguage(Idiomas.Catalan);
+                    Language.ChangeLanguage(ConfigStrings.Catalan);
                     break;
                 case Idioma.English:
-                    Language.ChangeLanguage(Idiomas.English);
+                    Language.ChangeLanguage(ConfigStrings.English);
                     break;                
                 case Idioma.Spanish:
-                    Language.ChangeLanguage(Idiomas.Spanish);
+                    Language.ChangeLanguage(ConfigStrings.Spanish);
                     break;
             }            
             UpdateControls();
@@ -168,31 +165,6 @@ namespace Vueling.Presentation.Winsite
             var controls = control.Controls.Cast<Control>();
             return controls.SelectMany(ctrl => GetParent(ctrl)).Concat(controls);
         }
-
-        private void ShowExceptionMessage(Exception ex)
-        {
-            if (ex is ArgumentException)
-                MessageBox.Show(Exceptions.ResourceManager.GetString("ArgumentException"));
-            if (ex is ArgumentNullException)
-                MessageBox.Show(Exceptions.ResourceManager.GetString("ArgumentNullException"));
-            if (ex is ArgumentOutOfRangeException)
-                MessageBox.Show(Exceptions.ResourceManager.GetString("ArgumentOutOfRangeException"));
-            if (ex is DirectoryNotFoundException)
-                MessageBox.Show(Exceptions.ResourceManager.GetString("DirectoryNotFoundException"));
-            if (ex is FileNotFoundException)
-                MessageBox.Show(Exceptions.ResourceManager.GetString("FileNotFoundException"));
-            if (ex is FormatException)
-                MessageBox.Show(Exceptions.ResourceManager.GetString("FormatException"));
-            if (ex is IOException)
-                MessageBox.Show(Exceptions.ResourceManager.GetString("IOException"));
-            if (ex is OutOfMemoryException)
-                MessageBox.Show(Exceptions.ResourceManager.GetString("OutOfMemoryException"));
-            if (ex is OverflowException)
-                MessageBox.Show(Exceptions.ResourceManager.GetString("OverflowException"));
-            if (ex is PlatformNotSupportedException)
-                MessageBox.Show(Exceptions.ResourceManager.GetString("PlatformNotSupportedException"));
-            if (ex is TargetException)
-                MessageBox.Show(Exceptions.ResourceManager.GetString("TargetException"));
-        }
+                
     }
 }
