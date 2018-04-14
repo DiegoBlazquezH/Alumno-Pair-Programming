@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
 using Vueling.Business.Logic;
 using Vueling.Common.Logic;
-using Vueling.Common.Logic.Exceptions;
+using Vueling.Common.Logic.Enums;
 using Vueling.Common.Logic.Model;
 using Vueling.Common.Logic.Properties;
-using static Vueling.Common.Logic.Enums.ExtensionesFicheros;
 
 namespace Vueling.Presentation.Winsite
 {
@@ -26,7 +24,7 @@ namespace Vueling.Presentation.Winsite
                 logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 InitializeComponent();
                 alumnoBL = new AlumnoBL();                
-                CargarDatosGrid();
+                CargarDatosTxt();
             }
             catch (Exception ex)
             {
@@ -34,7 +32,7 @@ namespace Vueling.Presentation.Winsite
             }
         }
                 
-        private void CargarDatosGrid()
+        private void CargarDatosTxt()
         {
             try
             {
@@ -49,6 +47,13 @@ namespace Vueling.Presentation.Winsite
             }
         }
 
+        private void CargarGrid(List<Alumno> alumnos)
+        {            
+            var source = new BindingSource();
+            source.DataSource = alumnos;
+            dataGridAlumnos.DataSource = source;
+        }
+
         private void buttonJson_Click(object sender, EventArgs e)
         {
             try
@@ -57,15 +62,13 @@ namespace Vueling.Presentation.Winsite
                 logger.Debug(button.Name + " " + LogStrings.Clicked);
                 alumnoBL.SeleccionarTipoFichero(Extension.JSON);
                 alumnos = alumnoBL.GetSingletonInstance();
-                var source = new BindingSource();
-                source.DataSource = alumnos;
-                dataGridAlumnos.DataSource = source;                
+                CargarGrid(alumnos);       
                 logger.Debug(button.Name + " " + LogStrings.Ends);
             }
             catch (Exception ex)
             {
                 logger.Exception(ex);
-                ShowExceptionMessage(ex);
+                ExceptionMessage.Show(ex);
             }
             
         }
@@ -78,15 +81,13 @@ namespace Vueling.Presentation.Winsite
                 logger.Debug(button.Name + " " + LogStrings.Clicked);
                 alumnoBL.SeleccionarTipoFichero(Extension.XML);
                 alumnos = alumnoBL.GetSingletonInstance();
-                var source = new BindingSource();
-                source.DataSource = alumnos;
-                dataGridAlumnos.DataSource = source;                
+                CargarGrid(alumnos);
                 logger.Debug(button.Name + " " + LogStrings.Ends);
             }
             catch (Exception ex)
             {
                 logger.Exception(ex);
-                ShowExceptionMessage(ex);
+                ExceptionMessage.Show(ex);
             }
         }
 
@@ -98,15 +99,13 @@ namespace Vueling.Presentation.Winsite
                 logger.Debug(button.Name + " " + LogStrings.Clicked);
                 alumnoBL.SeleccionarTipoFichero(Extension.TXT);
                 alumnos = alumnoBL.GetAll();
-                var source = new BindingSource();
-                source.DataSource = alumnos;
-                dataGridAlumnos.DataSource = source;                
+                CargarGrid(alumnos);
                 logger.Debug(button.Name + " " + LogStrings.Ends);
             }
             catch (Exception ex)
             {
                 logger.Exception(ex);
-                ShowExceptionMessage(ex);
+                ExceptionMessage.Show(ex);
             }
         }
 
@@ -115,27 +114,17 @@ namespace Vueling.Presentation.Winsite
             try
             {
                 var button = (Button)sender;
-                logger.Debug(button.Name + " " + LogStrings.Clicked);
-                string guid = txtGuid.Text;
-                string nombre = txtNombre.Text;
-                string apellidos = txtApellidos.Text;
-                string dni = txtDni.Text;
-                string id = txtId.Text;                
-                DateTime dtFechaNacimiento = dtpFechaNacimiento.Value;
-                string edad = txtEdad.Text;                
-                DateTime dtFechaRegistro = dtpFechaRegistro.Value;
-
-                List<Alumno> result = alumnoBL.Filter(guid,nombre,apellidos,dni,id,dtFechaNacimiento,chckBxFechaNacimiento.Checked,edad,dtFechaRegistro, chckBxFechaRegistro.Checked);
-
-                var source = new BindingSource();                
-                source.DataSource = result;
-                dataGridAlumnos.DataSource = source;
+                logger.Debug(button.Name + " " + LogStrings.Clicked);                
+                List<Alumno> result = alumnoBL.Filter(txtGuid.Text, txtNombre.Text, txtApellidos.Text,
+                    txtDni.Text, txtId.Text, dtpFechaNacimiento.Value, chckBxFechaNacimiento.Checked,
+                    txtEdad.Text, dtpFechaRegistro.Value, chckBxFechaRegistro.Checked);
+                CargarGrid(result); 
                 logger.Debug(button.Name + " " + LogStrings.Ends);
             }
             catch (Exception ex)
             {
                 logger.Exception(ex);
-                ShowExceptionMessage(ex);
+                ExceptionMessage.Show(ex);
             }
         }
 
@@ -152,7 +141,7 @@ namespace Vueling.Presentation.Winsite
             catch (Exception ex)
             {
                 logger.Exception(ex);
-                ShowExceptionMessage(ex);
+                ExceptionMessage.Show(ex);
             }
         }
 
@@ -169,34 +158,10 @@ namespace Vueling.Presentation.Winsite
             catch (Exception ex)
             {
                 logger.Exception(ex);
-                ShowExceptionMessage(ex);
+                ExceptionMessage.Show(ex);
             }
         }
 
-        private void ShowExceptionMessage(Exception ex)
-        {            
-            if (ex is ArgumentException)
-                MessageBox.Show(Exceptions.ResourceManager.GetString("ArgumentException"));
-            if (ex is ArgumentNullException)
-                MessageBox.Show(Exceptions.ResourceManager.GetString("ArgumentNullException"));
-            if (ex is ArgumentOutOfRangeException)
-                MessageBox.Show(Exceptions.ResourceManager.GetString("ArgumentOutOfRangeException"));
-            if (ex is DirectoryNotFoundException)
-                MessageBox.Show(Exceptions.ResourceManager.GetString("DirectoryNotFoundException"));
-            if (ex is FileNotFoundException)
-                MessageBox.Show(Exceptions.ResourceManager.GetString("FileNotFoundException"));
-            if (ex is FormatException)
-                MessageBox.Show(Exceptions.ResourceManager.GetString("FormatException"));
-            if (ex is IOException)
-                MessageBox.Show(Exceptions.ResourceManager.GetString("IOException"));
-            if (ex is OutOfMemoryException)
-                MessageBox.Show(Exceptions.ResourceManager.GetString("OutOfMemoryException"));
-            if (ex is OverflowException)
-                MessageBox.Show(Exceptions.ResourceManager.GetString("OverflowException"));
-            if (ex is PlatformNotSupportedException)
-                MessageBox.Show(Exceptions.ResourceManager.GetString("PlatformNotSupportedException"));
-            if (ex is TargetException)
-                MessageBox.Show(Exceptions.ResourceManager.GetString("TargetException"));
-        }
+        
     }
 }

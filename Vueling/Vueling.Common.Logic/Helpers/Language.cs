@@ -11,13 +11,13 @@ namespace Vueling.Common.Logic.Helpers
 
         public static void InitializeLanguage()
         {            
-            string idioma = Environment.GetEnvironmentVariable("Language", EnvironmentVariableTarget.User);
+            string idioma = Environment.GetEnvironmentVariable(ConfigStrings.Language, EnvironmentVariableTarget.User);
             
             if (String.IsNullOrEmpty(idioma))
             {
-                AppLanguage = Idiomas.Spanish;
-                Environment.SetEnvironmentVariable("Language", Idiomas.Spanish, EnvironmentVariableTarget.User);
-                ChangeLanguage(Idiomas.Spanish);
+                AppLanguage = ConfigStrings.Spanish;
+                Environment.SetEnvironmentVariable(ConfigStrings.Language, ConfigStrings.Spanish, EnvironmentVariableTarget.User);
+                ChangeLanguage(ConfigStrings.Spanish);
             }
             else
             {
@@ -27,7 +27,7 @@ namespace Vueling.Common.Logic.Helpers
         }
         public static void ChangeLanguage(string idioma)
         {
-            Environment.SetEnvironmentVariable("Language", idioma, EnvironmentVariableTarget.User);
+            Environment.SetEnvironmentVariable(ConfigStrings.Language, idioma, EnvironmentVariableTarget.User);
             Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo(idioma);
             Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(idioma);
         }

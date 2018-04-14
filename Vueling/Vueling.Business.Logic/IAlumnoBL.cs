@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Vueling.Common.Logic.Enums;
 using Vueling.Common.Logic.Model;
-using static Vueling.Common.Logic.Enums.ExtensionesFicheros;
 
 namespace Vueling.Business.Logic
 {

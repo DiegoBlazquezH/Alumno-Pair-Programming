@@ -22,14 +22,14 @@ namespace Vueling.Common.Logic.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Idiomas {
+    public class ConfigStrings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Idiomas() {
+        internal ConfigStrings() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Vueling.Common.Logic.Properties {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Vueling.Common.Logic.Properties.Idiomas", typeof(Idiomas).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Vueling.Common.Logic.Properties.ConfigStrings", typeof(ConfigStrings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -79,11 +79,56 @@ namespace Vueling.Common.Logic.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a tipoFichero.
+        /// </summary>
+        public static string FileType {
+            get {
+                return ResourceManager.GetString("FileType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ListadoAlumnos.json.
+        /// </summary>
+        public static string JsonFile {
+            get {
+                return ResourceManager.GetString("JsonFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Language.
+        /// </summary>
+        public static string Language {
+            get {
+                return ResourceManager.GetString("Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a es-ES.
         /// </summary>
         public static string Spanish {
             get {
                 return ResourceManager.GetString("Spanish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ListadoAlumnos.txt.
+        /// </summary>
+        public static string TxtFile {
+            get {
+                return ResourceManager.GetString("TxtFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ListadoAlumnos.xml.
+        /// </summary>
+        public static string XmlFile {
+            get {
+                return ResourceManager.GetString("XmlFile", resourceCulture);
             }
         }
     }

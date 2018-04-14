@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Vueling.Common.Logic.Enums.ExtensionesFicheros;
+﻿using Vueling.Common.Logic.Enums;
 
 namespace Vueling.DataAccess.Dao.Interfaces
 {

@@ -4,11 +4,11 @@ using System.Configuration;
 using System.Linq;
 using System.Reflection;
 using Vueling.Common.Logic;
+using Vueling.Common.Logic.Enums;
 using Vueling.Common.Logic.Model;
 using Vueling.Common.Logic.Properties;
 using Vueling.DataAccess.Dao;
 using Vueling.DataAccess.Dao.Interfaces;
-using static Vueling.Common.Logic.Enums.ExtensionesFicheros;
 
 namespace Vueling.Business.Logic
 {
@@ -23,7 +23,7 @@ namespace Vueling.Business.Logic
             {
                 logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
                 FicheroFactory ficheroFactory = new FicheroFactory();
-                ficheroAlumno = ficheroFactory.CrearFichero((Extension)Enum.Parse(typeof(Extension), ConfigurationManager.AppSettings["tipoFichero"]));
+                ficheroAlumno = ficheroFactory.CrearFichero((Extension)Enum.Parse(typeof(Extension), ConfigurationManager.AppSettings[ConfigStrings.FileType]));
                 logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
             }
             catch (Exception ex)

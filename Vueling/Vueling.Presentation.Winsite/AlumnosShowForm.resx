@@ -133,12 +133,6 @@
   <data name="&gt;&gt;dtpFechaNacimiento.Type" xml:space="preserve">
     <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;labelEdad.Name" xml:space="preserve">
-    <value>labelEdad</value>
-  </data>
-  <data name="&gt;&gt;chckBxFechaRegistro.Name" xml:space="preserve">
-    <value>chckBxFechaRegistro</value>
-  </data>
   <data name="dtpFechaNacimiento.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
@@ -151,6 +145,9 @@
   </data>
   <data name="buttonJson.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
+  </data>
+  <data name="&gt;&gt;labelFechaNacimiento.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="txtNombre.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -176,14 +173,11 @@
   <data name="labelEdad.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
-  <data name="labelFechaRegistro.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="labelFechaNacimiento.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;labelApellidos.ZOrder" xml:space="preserve">
-    <value>7</value>
+  <data name="dtpFechaNacimiento.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
   </data>
   <data name="&gt;&gt;txtDni.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -221,11 +215,17 @@
   <data name="&gt;&gt;buttonBuscar.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;dtpFechaRegistro.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="labelGuid.Text" xml:space="preserve">
     <value>GUID</value>
   </data>
   <data name="&gt;&gt;txtApellidos.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="labelFechaNacimiento.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 13</value>
   </data>
   <data name="txtNombre.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
@@ -236,8 +236,8 @@
   <data name="&gt;&gt;labelId.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="buttonXml.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+  <data name="&gt;&gt;labelEdad.Name" xml:space="preserve">
+    <value>labelEdad</value>
   </data>
   <data name="&gt;&gt;labelDni.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -245,17 +245,14 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
-  <data name="&gt;&gt;txtEdad.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
   <data name="&gt;&gt;txtNombre.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonXml.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="txtEdad.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+  <data name="labelGuid.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="labelId.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -284,8 +281,8 @@
   <data name="txtDni.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
   </data>
-  <data name="&gt;&gt;txtEdad.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;labelApellidos.Name" xml:space="preserve">
+    <value>labelApellidos</value>
   </data>
   <data name="&gt;&gt;txtId.Parent" xml:space="preserve">
     <value>$this</value>
@@ -299,17 +296,14 @@
   <data name="dataGridAlumnos.Location" type="System.Drawing.Point, System.Drawing">
     <value>38, 162</value>
   </data>
-  <data name="buttonJson.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
   <data name="buttonTxt.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
   <data name="txtApellidos.Location" type="System.Drawing.Point, System.Drawing">
     <value>272, 30</value>
   </data>
-  <data name="&gt;&gt;buttonTxt.ZOrder" xml:space="preserve">
-    <value>21</value>
+  <data name="&gt;&gt;buttonJson.Name" xml:space="preserve">
+    <value>buttonJson</value>
   </data>
   <data name="&gt;&gt;txtId.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -329,8 +323,17 @@
   <data name="&gt;&gt;labelApellidos.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;txtEdad.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelGuid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="labelDni.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 13</value>
+  </data>
+  <data name="&gt;&gt;buttonBuscar.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="txtNombre.Location" type="System.Drawing.Point, System.Drawing">
     <value>154, 30</value>
@@ -338,8 +341,8 @@
   <data name="txtDni.Location" type="System.Drawing.Point, System.Drawing">
     <value>389, 30</value>
   </data>
-  <data name="labelGuid.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;labelId.Name" xml:space="preserve">
+    <value>labelId</value>
   </data>
   <data name="txtGuid.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -392,6 +395,9 @@
   <data name="txtGuid.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
   </data>
+  <data name="&gt;&gt;buttonTxt.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
   <data name="&gt;&gt;labelNombre.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
@@ -401,11 +407,14 @@
   <data name="labelNombre.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="labelFechaRegistro.Location" type="System.Drawing.Point, System.Drawing">
+    <value>386, 62</value>
+  </data>
   <data name="&gt;&gt;txtDni.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
-  <data name="&gt;&gt;buttonBuscar.ZOrder" xml:space="preserve">
-    <value>18</value>
+  <data name="&gt;&gt;chckBxFechaRegistro.Name" xml:space="preserve">
+    <value>chckBxFechaRegistro</value>
   </data>
   <data name="&gt;&gt;labelGuid.ZOrder" xml:space="preserve">
     <value>9</value>
@@ -413,14 +422,8 @@
   <data name="dtpFechaRegistro.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="buttonTxt.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
   <data name="&gt;&gt;txtId.ZOrder" xml:space="preserve">
     <value>12</value>
-  </data>
-  <data name="&gt;&gt;dataGridAlumnos.ZOrder" xml:space="preserve">
-    <value>22</value>
   </data>
   <data name="&gt;&gt;txtNombre.Name" xml:space="preserve">
     <value>txtNombre</value>
@@ -428,14 +431,14 @@
   <data name="buttonBuscar.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 23</value>
   </data>
+  <data name="&gt;&gt;labelApellidos.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
   <data name="&gt;&gt;dtpFechaNacimiento.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;chckBxFechaRegistro.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="dtpFechaNacimiento.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
   </data>
   <data name="&gt;&gt;chckBxFechaNacimiento.Parent" xml:space="preserve">
     <value>$this</value>
@@ -452,20 +455,14 @@
   <data name="chckBxFechaRegistro.Text" xml:space="preserve">
     <value>Habilitar</value>
   </data>
+  <data name="labelEdad.Location" type="System.Drawing.Point, System.Drawing">
+    <value>269, 62</value>
+  </data>
   <data name="dtpFechaNacimiento.Location" type="System.Drawing.Point, System.Drawing">
     <value>154, 76</value>
   </data>
   <data name="labelGuid.Location" type="System.Drawing.Point, System.Drawing">
     <value>35, 15</value>
-  </data>
-  <data name="labelNombre.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 13</value>
-  </data>
-  <data name="&gt;&gt;labelId.Name" xml:space="preserve">
-    <value>labelId</value>
-  </data>
-  <data name="&gt;&gt;labelApellidos.Name" xml:space="preserve">
-    <value>labelApellidos</value>
   </data>
   <data name="chckBxFechaNacimiento.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -482,9 +479,6 @@
   <data name="&gt;&gt;buttonTxt.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;buttonBuscar.Name" xml:space="preserve">
-    <value>buttonBuscar</value>
-  </data>
   <data name="&gt;&gt;dtpFechaRegistro.Name" xml:space="preserve">
     <value>dtpFechaRegistro</value>
   </data>
@@ -494,6 +488,12 @@
   <data name="labelDni.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="&gt;&gt;buttonBuscar.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="chckBxFechaNacimiento.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 17</value>
+  </data>
   <data name="buttonBuscar.Text" xml:space="preserve">
     <value>Buscar</value>
   </data>
@@ -502,9 +502,6 @@
   </data>
   <data name="&gt;&gt;txtApellidos.Name" xml:space="preserve">
     <value>txtApellidos</value>
-  </data>
-  <data name="&gt;&gt;txtNombre.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="dataGridAlumnos.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -524,14 +521,17 @@
   <data name="txtApellidos.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
   </data>
+  <data name="buttonXml.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
   <data name="txtApellidos.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
   <data name="txtEdad.Location" type="System.Drawing.Point, System.Drawing">
     <value>272, 76</value>
   </data>
-  <data name="&gt;&gt;buttonJson.Name" xml:space="preserve">
-    <value>buttonJson</value>
+  <data name="&gt;&gt;txtNombre.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="buttonJson.Text" xml:space="preserve">
     <value>Json</value>
@@ -548,14 +548,14 @@
   <data name="buttonBuscar.Location" type="System.Drawing.Point, System.Drawing">
     <value>195, 125</value>
   </data>
-  <data name="&gt;&gt;buttonBuscar.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="labelNombre.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 13</value>
   </data>
-  <data name="chckBxFechaNacimiento.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 17</value>
+  <data name="txtEdad.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
   </data>
-  <data name="labelFechaNacimiento.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 13</value>
+  <data name="&gt;&gt;dataGridAlumnos.ZOrder" xml:space="preserve">
+    <value>22</value>
   </data>
   <data name="labelId.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -587,14 +587,14 @@
   <data name="txtDni.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="labelFechaRegistro.Location" type="System.Drawing.Point, System.Drawing">
-    <value>386, 62</value>
+  <data name="&gt;&gt;buttonBuscar.Name" xml:space="preserve">
+    <value>buttonBuscar</value>
   </data>
   <data name="&gt;&gt;buttonJson.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="labelEdad.Location" type="System.Drawing.Point, System.Drawing">
-    <value>269, 62</value>
+  <data name="buttonJson.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;txtApellidos.ZOrder" xml:space="preserve">
     <value>14</value>
@@ -614,8 +614,8 @@
   <data name="&gt;&gt;labelNombre.Name" xml:space="preserve">
     <value>labelNombre</value>
   </data>
-  <data name="&gt;&gt;dtpFechaRegistro.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="buttonTxt.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="labelDni.Location" type="System.Drawing.Point, System.Drawing">
     <value>386, 15</value>
@@ -638,8 +638,8 @@
   <data name="&gt;&gt;labelNombre.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;labelFechaNacimiento.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;txtEdad.ZOrder" xml:space="preserve">
+    <value>11</value>
   </data>
   <data name="&gt;&gt;labelDni.Parent" xml:space="preserve">
     <value>$this</value>
@@ -674,8 +674,8 @@
   <data name="dataGridAlumnos.Size" type="System.Drawing.Size, System.Drawing">
     <value>451, 176</value>
   </data>
-  <data name="&gt;&gt;labelGuid.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="labelFechaRegistro.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="buttonTxt.Location" type="System.Drawing.Point, System.Drawing">
     <value>51, 354</value>
@@ -699,6 +699,6 @@
     <value>True</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>en-GB</value>
+    <value>es-ES</value>
   </metadata>
 </root>

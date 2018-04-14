@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using Vueling.DataAccess.Dao;
 using Vueling.Common.Logic.Model;
-using static Vueling.Common.Logic.Enums.ExtensionesFicheros;
+using Vueling.Common.Logic.Enums;
 
 namespace Vueling.Tests.DataAccess.Dao.IntegrationTests
 {

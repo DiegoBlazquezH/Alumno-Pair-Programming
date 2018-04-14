@@ -66,6 +66,7 @@
     <Compile Include="AlumnosShowForm.Designer.cs">
       <DependentUpon>AlumnosShowForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExceptionMessage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AlumnoForm.ca-ES.resx">
