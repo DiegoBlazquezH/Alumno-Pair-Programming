@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlumnosShowForm));
-            this.dataGridAlumnos = new System.Windows.Forms.DataGridView();
             this.buttonTxt = new System.Windows.Forms.Button();
             this.buttonJson = new System.Windows.Forms.Button();
             this.buttonXml = new System.Windows.Forms.Button();
@@ -56,15 +55,9 @@
             this.buttonBorrar = new System.Windows.Forms.Button();
             this.txtBoxGuidBorrar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.dataGridAlumnos = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAlumnos)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridAlumnos
-            // 
-            this.dataGridAlumnos.AllowUserToAddRows = false;
-            this.dataGridAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resources.ApplyResources(this.dataGridAlumnos, "dataGridAlumnos");
-            this.dataGridAlumnos.Name = "dataGridAlumnos";
             // 
             // buttonTxt
             // 
@@ -214,37 +207,44 @@
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
+            // dataGridAlumnos
+            // 
+            this.dataGridAlumnos.AllowUserToAddRows = false;
+            this.dataGridAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.dataGridAlumnos, "dataGridAlumnos");
+            this.dataGridAlumnos.Name = "dataGridAlumnos";
+            // 
             // AlumnosShowForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtBoxGuidBorrar);
+            this.Controls.Add(this.dataGridAlumnos);
             this.Controls.Add(this.buttonBorrar);
+            this.Controls.Add(this.buttonBuscar);
+            this.Controls.Add(this.txtBoxGuidBorrar);
             this.Controls.Add(this.buttonSql);
-            this.Controls.Add(this.chckBxFechaNacimiento);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.chckBxFechaRegistro);
             this.Controls.Add(this.labelFechaRegistro);
-            this.Controls.Add(this.labelEdad);
-            this.Controls.Add(this.labelFechaNacimiento);
-            this.Controls.Add(this.labelId);
-            this.Controls.Add(this.labelDni);
-            this.Controls.Add(this.labelApellidos);
-            this.Controls.Add(this.labelNombre);
-            this.Controls.Add(this.labelGuid);
-            this.Controls.Add(this.dtpFechaRegistro);
-            this.Controls.Add(this.txtEdad);
-            this.Controls.Add(this.txtId);
-            this.Controls.Add(this.txtDni);
-            this.Controls.Add(this.txtApellidos);
-            this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.dtpFechaNacimiento);
-            this.Controls.Add(this.txtGuid);
-            this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.buttonXml);
+            this.Controls.Add(this.dtpFechaRegistro);
+            this.Controls.Add(this.txtGuid);
             this.Controls.Add(this.buttonJson);
+            this.Controls.Add(this.labelDni);
+            this.Controls.Add(this.labelGuid);
+            this.Controls.Add(this.txtEdad);
+            this.Controls.Add(this.labelEdad);
             this.Controls.Add(this.buttonTxt);
-            this.Controls.Add(this.dataGridAlumnos);
+            this.Controls.Add(this.labelFechaNacimiento);
+            this.Controls.Add(this.chckBxFechaNacimiento);
+            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.labelId);
+            this.Controls.Add(this.dtpFechaNacimiento);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.labelNombre);
+            this.Controls.Add(this.txtApellidos);
+            this.Controls.Add(this.txtDni);
+            this.Controls.Add(this.labelApellidos);
             this.Name = "AlumnosShowForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAlumnos)).EndInit();
             this.ResumeLayout(false);
@@ -253,8 +253,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridAlumnos;
         private System.Windows.Forms.Button buttonTxt;
         private System.Windows.Forms.Button buttonJson;
         private System.Windows.Forms.Button buttonXml;
@@ -281,5 +279,6 @@
         private System.Windows.Forms.Button buttonBorrar;
         private System.Windows.Forms.TextBox txtBoxGuidBorrar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridAlumnos;
     }
 }
