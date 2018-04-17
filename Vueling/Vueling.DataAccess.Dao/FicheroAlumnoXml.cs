@@ -157,5 +157,38 @@ namespace Vueling.DataAccess.Dao
                 throw;
             }
         }
+
+        public List<Alumno> DeleteByGuid(string guid)
+        {
+            try
+            {
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
+
+                List<Alumno> alumnosExistentes = DeserializeXml();
+                bool encontrado = false;
+                int i = 0;
+                while(!encontrado && i < alumnosExistentes.Count)
+                {
+                    if (alumnosExistentes[i].GUID == new Guid(guid))
+                    {
+                        alumnosExistentes.Remove(alumnosExistentes[i]);
+                        encontrado = true;                        
+                    }
+                    ++i;
+                }
+                if (encontrado)
+                {
+                    string xmlNuevo = SerializeXml(alumnosExistentes);
+                    FileUtils.EscribirFichero(xmlNuevo, Ruta);
+                }
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
+                return alumnosExistentes;
+            }
+            catch (Exception ex)
+            {
+                logger.Exception(ex);
+                throw;
+            }
+        }
     }
 }

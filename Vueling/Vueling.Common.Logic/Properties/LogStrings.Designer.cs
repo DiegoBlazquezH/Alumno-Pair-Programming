@@ -79,6 +79,15 @@ namespace Vueling.Common.Logic.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Error.
+        /// </summary>
+        public static string InsertError {
+            get {
+                return ResourceManager.GetString("InsertError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a instantiating.
         /// </summary>
         public static string Instantiating {

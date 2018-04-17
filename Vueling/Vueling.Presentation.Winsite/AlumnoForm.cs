@@ -165,6 +165,23 @@ namespace Vueling.Presentation.Winsite
             var controls = control.Controls.Cast<Control>();
             return controls.SelectMany(ctrl => GetParent(ctrl)).Concat(controls);
         }
-                
+
+        private void buttonSQL_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var button = (Button)sender;
+                logger.Debug(button.Name + " " + LogStrings.Clicked);
+                LoadAlumnoData();
+                alumnoBL.SeleccionarTipoFichero(Extension.SQL);
+                alumnoBL.Add(alumno);
+                logger.Debug(button.Name + " " + LogStrings.Ends);
+            }
+            catch (Exception ex)
+            {
+                logger.Exception(ex);
+                ExceptionMessage.Show(ex);
+            }
+        }
     }
 }

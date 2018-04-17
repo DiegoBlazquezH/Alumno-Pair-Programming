@@ -118,6 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="buttonJson.Location" type="System.Drawing.Point, System.Drawing">
+    <value>186, 301</value>
+  </data>
+  <data name="buttonXML.Location" type="System.Drawing.Point, System.Drawing">
+    <value>303, 301</value>
+  </data>
   <data name="labelNombre.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 13</value>
   </data>
@@ -135,15 +141,6 @@
   </data>
   <data name="labelNacimiento.Text" xml:space="preserve">
     <value>Birth date</value>
-  </data>
-  <data name="comboBox1.Items" xml:space="preserve">
-    <value>Catalan</value>
-  </data>
-  <data name="comboBox1.Items1" xml:space="preserve">
-    <value>English</value>
-  </data>
-  <data name="comboBox1.Items2" xml:space="preserve">
-    <value>Spanish</value>
   </data>
   <data name="buttonMostrarAlumnos.Text" xml:space="preserve">
     <value>Show students</value>

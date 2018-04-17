@@ -10,6 +10,8 @@ namespace Vueling.DataAccess.Dao
     public class FicheroFactory
     {
         private readonly ILogger logger = new Logger(MethodBase.GetCurrentMethod().DeclaringType);
+
+
         public IFicheroAlumno CrearFichero(Extension extension)
         {
             try
@@ -27,7 +29,7 @@ namespace Vueling.DataAccess.Dao
                         logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + Extension.XML + " " + LogStrings.Starts);
                         return new FicheroAlumnoXml();
                     case Extension.SQL:
-                        logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name+ " " + Extension.SQL + " " + LogStrings.Starts);
+                        logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + Extension.SQL + " " + LogStrings.Starts);
                         return new FicheroAlumnoSql();
                     default:
                         logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + Extension.TXT + " " + LogStrings.Starts);

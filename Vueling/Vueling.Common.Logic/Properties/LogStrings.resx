@@ -123,6 +123,9 @@
   <data name="Ends" xml:space="preserve">
     <value>ends</value>
   </data>
+  <data name="InsertError" xml:space="preserve">
+    <value>Error</value>
+  </data>
   <data name="Instantiating" xml:space="preserve">
     <value>instantiating</value>
   </data>

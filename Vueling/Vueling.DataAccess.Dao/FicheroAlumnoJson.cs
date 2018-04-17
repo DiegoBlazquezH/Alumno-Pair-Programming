@@ -134,6 +134,39 @@ namespace Vueling.DataAccess.Dao
                 logger.Exception(ex);
                 throw;
             }
-        }        
+        }
+
+        public List<Alumno> DeleteByGuid(string guid)
+        {
+            try
+            {
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
+
+                List<Alumno> alumnosExistentes = DeserializeJson();
+                bool encontrado = false;
+                int i = 0;
+                while (!encontrado && i < alumnosExistentes.Count)
+                {
+                    if (alumnosExistentes[i].GUID == new Guid(guid))
+                    {
+                        alumnosExistentes.Remove(alumnosExistentes[i]);
+                        encontrado = true;
+                    }
+                    ++i;
+                }
+                if (encontrado)
+                {                    
+                    string jsonNuevo = JsonConvert.SerializeObject(alumnosExistentes, Formatting.Indented);
+                    FileUtils.EscribirFichero(jsonNuevo, Ruta);
+                }
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
+                return alumnosExistentes;
+            }
+            catch (Exception ex)
+            {
+                logger.Exception(ex);
+                throw;
+            }
+        }
     }
 }

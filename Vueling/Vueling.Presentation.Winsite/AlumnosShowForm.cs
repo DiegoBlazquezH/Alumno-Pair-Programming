@@ -162,6 +162,33 @@ namespace Vueling.Presentation.Winsite
             }
         }
 
-        
+        private void buttonSql_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var button = (Button)sender;
+                logger.Debug(button.Name + " " + LogStrings.Clicked);
+                alumnoBL.SeleccionarTipoFichero(Extension.SQL);
+                alumnos = alumnoBL.GetAll();
+                CargarGrid(alumnos);
+                logger.Debug(button.Name + " " + LogStrings.Ends);
+            }
+            catch (Exception ex)
+            {
+                logger.Exception(ex);
+                ExceptionMessage.Show(ex);
+            }
+        }
+
+        private void buttonBorrar_Click(object sender, EventArgs e)
+        {
+            string guid = txtBoxGuidBorrar.Text;
+            var button = (Button)sender;
+            logger.Debug(button.Name + " " + LogStrings.Clicked);            
+            alumnos = alumnoBL.DeleteByGuid(guid);
+            CargarGrid(alumnos);
+            logger.Debug(button.Name + " " + LogStrings.Ends);
+
+        }
     }
 }

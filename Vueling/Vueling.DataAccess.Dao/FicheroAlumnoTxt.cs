@@ -154,5 +154,26 @@ namespace Vueling.DataAccess.Dao
                 throw;
             }
         }
+
+        public List<Alumno> DeleteByGuid(string guid)
+        {            
+            try
+            {
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
+
+                var lines = File.ReadAllLines(Ruta);
+                var remaining = lines.Where(x => !x.Contains(guid)).ToArray();
+                File.WriteAllLines(Ruta, remaining);
+
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
+
+                return GetAll();
+            }
+            catch (Exception ex)
+            {
+                logger.Exception(ex);
+                throw;
+            }
+        }
     }
 }

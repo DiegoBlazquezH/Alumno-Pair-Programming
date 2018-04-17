@@ -42,7 +42,9 @@ namespace Vueling.Tests.DataAccess.Dao.IntegrationTests
         [DynamicData(nameof(DatosAlumno), DynamicDataSourceType.Method)]
         public void TestFicheroAlumnoTxt(Alumno alumno)
         {
-            IFicheroAlumno ficheroAlumnoTxt = ficheroFactory.CrearFichero(Extension.TXT);
+
+            IFicheroAlumno ficheroAlumnoTxt = new FicheroAlumnoTxt();
+            ficheroFactory.CrearFichero(Extension.TXT);
             Alumno alumnoAñadido = ficheroAlumnoTxt.Add(alumno);
             Assert.IsTrue(alumno.Equals(alumnoAñadido));
         }
@@ -51,7 +53,8 @@ namespace Vueling.Tests.DataAccess.Dao.IntegrationTests
         [DynamicData(nameof(DatosAlumno), DynamicDataSourceType.Method)]
         public void TestFicheroAlumnoJson(Alumno alumno)
         {
-            IFicheroAlumno ficheroAlumnoJson = ficheroFactory.CrearFichero(Extension.JSON);
+            IFicheroAlumno ficheroAlumnoJson = new FicheroAlumnoJson();
+            ficheroFactory.CrearFichero(Extension.JSON);
             Alumno alumnoAñadido = ficheroAlumnoJson.Add(alumno);
             Assert.IsTrue(alumno.Equals(alumnoAñadido));
         }
@@ -60,9 +63,11 @@ namespace Vueling.Tests.DataAccess.Dao.IntegrationTests
         [DynamicData(nameof(DatosAlumno), DynamicDataSourceType.Method)]
         public void TestFicheroAlumnoXml(Alumno alumno)
         {
-            IFicheroAlumno ficheroAlumnoXml = ficheroFactory.CrearFichero(Extension.XML);
+            IFicheroAlumno ficheroAlumnoXml = new FicheroAlumnoXml();
+            ficheroFactory.CrearFichero(Extension.XML);
             Alumno alumnoAñadido = ficheroAlumnoXml.Add(alumno);
             Assert.IsTrue(alumno.Equals(alumnoAñadido));
         }
+
     }
 }
