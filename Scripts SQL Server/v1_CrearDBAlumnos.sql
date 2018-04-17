@@ -10,7 +10,7 @@ BEGIN
 
 	-- Get current OS
 	SET @os = (SELECT @@VERSION)
-	PRINT(@os)
+	--PRINT(@os)
 	IF CHARINDEX('Windows',@os) != 0
 	BEGIN
 		SET @os = 'Windows'
@@ -80,8 +80,8 @@ BEGIN
 				  FILEGROWTH=1MB);
 				  '
 	-- Print for debugging and execution
-	PRINT(@sql)
-	--EXEC(@sql)
+	--PRINT(@sql)
+	EXEC(@sql)
 END
 ELSE
 	PRINT('La base de datos AlumnoDB ya existe')

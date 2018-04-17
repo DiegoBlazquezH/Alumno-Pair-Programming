@@ -13,16 +13,16 @@ namespace Vueling.DataAccess.Dao
     {
         private readonly ILogger logger = new Logger(MethodBase.GetCurrentMethod().DeclaringType);
         private readonly string ConnectionString;
-        private readonly string queryInsert = "INSERT INTO dbo.Students (GUID, ID, Nombre, Apellidos, DNI, FechaNacimiento, Edad, FechaCompletaAlta) VALUES (@GUID,@ID,@Nombre, @Apellidos, @DNI, @FechaNacimiento, @Edad, @FechaCompletaAlta)";
-        private readonly string querySelect = "Select * from dbo.Students";
-        private readonly string queryDelete = "DELETE from dbo.Students WHERE GUID = @GUID";
+        private readonly string queryInsert = "INSERT INTO dbo.Alumnos (GUID, ID, Nombre, Apellidos, DNI, FechaNacimiento, Edad, FechaCompletaAlta) VALUES (@GUID,@ID,@Nombre, @Apellidos, @DNI, @FechaNacimiento, @Edad, @FechaCompletaAlta)";
+        private readonly string querySelect = "SELECT * FROM dbo.Alumnos";
+        private readonly string queryDelete = "DELETE FROM dbo.Alumnos WHERE GUID = @GUID";
 
         public FicheroAlumnoSql()
         {
             try
             {
                 logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);                
-                ConnectionString = "Server = localhost; Database = TutorialDB; Integrated Security = True; ";
+                ConnectionString = "Server = localhost; Database = AlumnosDB; Integrated Security = True; ";
                 logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
             }
             catch (Exception ex)
@@ -72,7 +72,7 @@ namespace Vueling.DataAccess.Dao
                 logger.Exception(ex);
                 throw;
             }
-}
+        }
 
         public List<Alumno> DeleteByGuid(string guid)
         {
@@ -88,7 +88,7 @@ namespace Vueling.DataAccess.Dao
                         command.ExecuteNonQuery();
                     }
                     con.Close();
-                }                
+                }
                 logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
                 return GetAll();
             }
@@ -101,7 +101,6 @@ namespace Vueling.DataAccess.Dao
 
         public List<Alumno> GetAll()
         {
-
             try
             {
                 List<Alumno> alumnos = new List<Alumno>();
@@ -134,7 +133,6 @@ namespace Vueling.DataAccess.Dao
                         }
                     }
                 }
-
                 logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
 
                 return alumnos;
