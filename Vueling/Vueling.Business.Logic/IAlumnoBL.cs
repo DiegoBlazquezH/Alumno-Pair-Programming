@@ -13,5 +13,6 @@ namespace Vueling.Business.Logic
         List<Alumno> GetAll();
         List<Alumno> GetSingletonInstance();
         List<Alumno> Filter(string guid, string nombre, string apellidos, string dni, string id, DateTime dtFechaNacimiento, bool fechaNacimientoChecked, string edad, DateTime dtFechaRegistro, bool fechaRegistroChecked);
+        List<Alumno> DeleteByGuid(string guid);
     }
 }

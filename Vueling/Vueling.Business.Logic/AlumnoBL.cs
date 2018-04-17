@@ -21,9 +21,10 @@ namespace Vueling.Business.Logic
         {
             try
             {
-                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);                
                 FicheroFactory ficheroFactory = new FicheroFactory();
                 ficheroAlumno = ficheroFactory.CrearFichero((Extension)Enum.Parse(typeof(Extension), ConfigurationManager.AppSettings[ConfigStrings.FileType]));
+                
                 logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
             }
             catch (Exception ex)
@@ -149,6 +150,22 @@ namespace Vueling.Business.Logic
                 var result = query.ToList();
                 logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
                 return result;
+            }
+            catch (Exception ex)
+            {
+                logger.Exception(ex);
+                throw;
+            }
+        }
+
+        public List<Alumno> DeleteByGuid(string guid)
+        {
+            try
+            {
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
+                List<Alumno> alumnos = ficheroAlumno.DeleteByGuid(guid);
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
+                return alumnos;
             }
             catch (Exception ex)
             {

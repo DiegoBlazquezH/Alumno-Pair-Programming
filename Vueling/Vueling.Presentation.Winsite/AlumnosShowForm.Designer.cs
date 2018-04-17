@@ -52,14 +52,18 @@
             this.labelFechaRegistro = new System.Windows.Forms.Label();
             this.chckBxFechaRegistro = new System.Windows.Forms.CheckBox();
             this.chckBxFechaNacimiento = new System.Windows.Forms.CheckBox();
+            this.buttonSql = new System.Windows.Forms.Button();
+            this.buttonBorrar = new System.Windows.Forms.Button();
+            this.txtBoxGuidBorrar = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAlumnos)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridAlumnos
             // 
-            resources.ApplyResources(this.dataGridAlumnos, "dataGridAlumnos");
             this.dataGridAlumnos.AllowUserToAddRows = false;
             this.dataGridAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.dataGridAlumnos, "dataGridAlumnos");
             this.dataGridAlumnos.Name = "dataGridAlumnos";
             // 
             // buttonTxt
@@ -186,10 +190,38 @@
             this.chckBxFechaNacimiento.UseVisualStyleBackColor = true;
             this.chckBxFechaNacimiento.CheckedChanged += new System.EventHandler(this.chckBxFechaNacimiento_CheckedChanged);
             // 
+            // buttonSql
+            // 
+            resources.ApplyResources(this.buttonSql, "buttonSql");
+            this.buttonSql.Name = "buttonSql";
+            this.buttonSql.UseVisualStyleBackColor = true;
+            this.buttonSql.Click += new System.EventHandler(this.buttonSql_Click);
+            // 
+            // buttonBorrar
+            // 
+            resources.ApplyResources(this.buttonBorrar, "buttonBorrar");
+            this.buttonBorrar.Name = "buttonBorrar";
+            this.buttonBorrar.UseVisualStyleBackColor = true;
+            this.buttonBorrar.Click += new System.EventHandler(this.buttonBorrar_Click);
+            // 
+            // txtBoxGuidBorrar
+            // 
+            resources.ApplyResources(this.txtBoxGuidBorrar, "txtBoxGuidBorrar");
+            this.txtBoxGuidBorrar.Name = "txtBoxGuidBorrar";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
             // AlumnosShowForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtBoxGuidBorrar);
+            this.Controls.Add(this.buttonBorrar);
+            this.Controls.Add(this.buttonSql);
             this.Controls.Add(this.chckBxFechaNacimiento);
             this.Controls.Add(this.chckBxFechaRegistro);
             this.Controls.Add(this.labelFechaRegistro);
@@ -245,5 +277,9 @@
         private System.Windows.Forms.Label labelFechaRegistro;
         private System.Windows.Forms.CheckBox chckBxFechaRegistro;
         private System.Windows.Forms.CheckBox chckBxFechaNacimiento;
+        private System.Windows.Forms.Button buttonSql;
+        private System.Windows.Forms.Button buttonBorrar;
+        private System.Windows.Forms.TextBox txtBoxGuidBorrar;
+        private System.Windows.Forms.Label label1;
     }
 }

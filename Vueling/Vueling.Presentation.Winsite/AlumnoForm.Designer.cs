@@ -45,6 +45,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.buttonMostrarAlumnos = new System.Windows.Forms.Button();
             this.textBoxNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.buttonSQL = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -116,7 +117,7 @@
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Controls.Add(this.buttonSQL);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.buttonMostrarAlumnos);
             this.panel1.Controls.Add(this.textBoxNacimiento);
@@ -132,17 +133,18 @@
             this.panel1.Controls.Add(this.textBoxApellidos);
             this.panel1.Controls.Add(this.textBoxDNI);
             this.panel1.Controls.Add(this.textBoxNombre);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // comboBox1
             // 
-            resources.ApplyResources(this.comboBox1, "comboBox1");
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             resources.GetString("comboBox1.Items"),
             resources.GetString("comboBox1.Items1"),
             resources.GetString("comboBox1.Items2")});
+            resources.ApplyResources(this.comboBox1, "comboBox1");
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -157,6 +159,13 @@
             // 
             resources.ApplyResources(this.textBoxNacimiento, "textBoxNacimiento");
             this.textBoxNacimiento.Name = "textBoxNacimiento";
+            // 
+            // buttonSQL
+            // 
+            resources.ApplyResources(this.buttonSQL, "buttonSQL");
+            this.buttonSQL.Name = "buttonSQL";
+            this.buttonSQL.UseVisualStyleBackColor = true;
+            this.buttonSQL.Click += new System.EventHandler(this.buttonSQL_Click);
             // 
             // AlumnoForm
             // 
@@ -188,5 +197,6 @@
         private System.Windows.Forms.DateTimePicker textBoxNacimiento;
         private System.Windows.Forms.Button buttonMostrarAlumnos;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button buttonSQL;
     }
 }
